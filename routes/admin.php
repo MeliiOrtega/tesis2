@@ -9,4 +9,4 @@ Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard'
 
 Route::resource('roles', RoleController::class)->names('roles');
 
-Route::resource('user', UserController::class)->only(['index','edit', 'update'])->names('users');
+Route::resource('user', UserController::class)->only(['index','edit', 'update', 'destroy'])->names('users');

@@ -10,9 +10,11 @@
             <table class="table table-striped">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    {{-- <th>ID</th> --}}
                     <th>Nombre</th>
                     <th>Email</th>
+                    <th>Role</th>
+                    <th></th>
                     <th></th>
                 <tr>
             </thead>
@@ -20,11 +22,19 @@
             <tbody>
                 @foreach($users as $user)
                 <tr>
-                    <td>{{$user->id}}</td>
+                    {{-- <td>{{$user->id}}</td> --}}
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
+                    <td>{{$user->role}}</td>
                     <td width="10px">
                         <a class="btn btn-primary"href="{{route('admin.users.edit', $user)}}">Editar</a>
+                    </td>
+                    <td width="10px">
+                        <form action="{{route('admin.users.destroy', $user)}}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                        </form>
                     </td>
                 <tr>
                 @endforeach

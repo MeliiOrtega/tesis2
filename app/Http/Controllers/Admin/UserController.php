@@ -9,10 +9,12 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    public $user;
     public function __construct()
     {
         $this->middleware('can:Leer usuarios')->only('index');
         $this->middleware('can:Editar usuarios')->only('edit', 'update');
+        $this->middleware('can:Eliminar usuarios')->only('destroy');
     }
 
     public function index()
@@ -29,8 +31,38 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
-        $user->roles()->sync($request->roles);
-        return redirect()->route('admin.users.edit', $user);
+
+
+
+
+
+        if ($user->roles('voluntario')) {
+
+            $user->update([
+                'role' => 'voluntario'
+            ]);
+
+            $user->roles()->sync($request->roles);
+            return redirect()->route('admin.users.edit', $user);
+        }
+        /* elseif ($user->roles('voluntario')){
+
+            $user->update([
+                'role' => 'voluntario'
+            ]);
+           // $user->save();
+            $user->roles()->sync($request->roles);
+            return redirect()->route('admin.users.edit', $user);
+        } */
+
     }
+
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('admin.users.index')->with('info', 'El usuario se ha eliminado');
+    }
+
 
 }
