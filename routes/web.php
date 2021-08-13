@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Livewire\CourseStatus;
+use App\Http\Livewire\Register;
 
 Route::get('/', HomeController::class)->name('home'); //WELCOME
 
@@ -12,6 +14,8 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::get('cursos', [CourseController::class,'index'])->name('courses.index');
+
+Route::get('/registerv',[RegisterController::class, 'index'])->name('register.voluntary');
 
 
 Route::get('category/{category}',  [CourseController::class, 'category'])->name('courses.category');

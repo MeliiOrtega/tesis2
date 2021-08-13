@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
+use Illuminate\Validation\Rules\Password;
 
 class CreateNewUser implements CreatesNewUsers
 {
@@ -23,21 +24,29 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => $this->passwordRules(),
+            'phone' =>['required', 'max:10', 'min:10'],
+            'password' => ['required', 'confirmed', Password::min(8)
+            ->letters()
+            ->mixedCase()
+            ->numbers()
+            ->symbols()],
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
 
         $user = User::create([
-            'name' => $input['name'],
             'email' => $input['email'],
+            'name' => $input['name'],
+
             'password' => Hash::make($input['password']),
-            'role' => $input['role'],
+            'role' => 'usuario',
             'phone' => $input['phone'],
-            'razon' => $input['razon']
+            'fecha' => $input['fecha']
         ]);
 
-        $role = $input['role'];
+        return $user;
+
+       /*  $role = $input['role'];
         if($role == 'voluntario'){
             $user->assignRole('voluntario');
             return $user;
@@ -45,7 +54,7 @@ class CreateNewUser implements CreatesNewUsers
         elseif($role == 'usuario'){
             $user->assignRole('usuario');
             return $user;
-        }
+        } */
 
 
 

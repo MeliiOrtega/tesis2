@@ -138,6 +138,30 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'email' => [
+            'required' => 'El correo electronico es requerido',
+            'unique' => 'Ya existe el correo, intente de nuevo'
+        ],
+        'fecha' => [
+            'required' => 'La fecha es requerida',
+        ],
+        'ocupacion' => [
+            'required' => 'La ocupación es requerida',
+        ],
+        'direccion' => [
+            'required' => 'La dirección es requerida',
+        ],
+        'phone' => [
+            'required' => 'El numero de celular es requerido',
+        ],
+
+        'password_confirmation' => [
+            'required' => 'La confirmación de contraseña es requerida',
+        ],
+
+        'password' => [
+            'regex' => 'La contraseña debe tener un número, una letra mayúscula, una letra minúscula y un simbolo !,$,#,%',
+        ],
     ],
 
     /*

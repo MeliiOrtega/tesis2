@@ -11,8 +11,11 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-        
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+        <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}">
+        @livewireStyles
+
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
@@ -21,5 +24,13 @@
         <div class="font-sans text-gray-900 antialiased">
             {{ $slot }}
         </div>
+
+        @stack('modals')
+
+        @livewireScripts
+
+    @isset($js)
+        {{$js}}
+    @endisset
     </body>
 </html>
