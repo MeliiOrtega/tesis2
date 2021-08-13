@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->enum('role', ['admin', 'usuario', 'voluntario'])->default('usuario');
             $table->string('phone', 10)->nullable();
             $table->date('fecha')->nullable();
-            $table->string('cedula',9)->nullable();
+            $table->string('cedula',10)->nullable();
             $table->string('ocupacion')->nullable();
             $table->string('direccion')->nullable();
             $table->foreignId('current_team_id')->nullable();

@@ -18,6 +18,7 @@ protected $paginationTheme = "bootstrap";
     {
         $users =User::where('name', 'LIKE', '%' . $this->search . '%')
         ->orWhere('email', 'LIKE', '%' . $this->search . '%')
+        ->orWhere('role', 'LIKE', '%' . $this->search . '%')
         ->paginate(8);
         return view('livewire.admin-users', compact('users'));
     }
