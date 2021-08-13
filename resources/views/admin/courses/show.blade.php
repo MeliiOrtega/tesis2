@@ -24,7 +24,7 @@
     </section>
     <!--OBJETIVOS-->
     <div class="container grid grid-cols-1 lg:grid-cols-3  gap-6">
-        @if(session('info'))
+      @if(session('info'))
             <div class="lg:col-span-2" x-data="{open:true}" x-show="open">
                 <div class="relative py-3 pl-4 pr-10 leading-normal text-red-800 bg-red-100 rounded-lg" role="alert">
                     <strong class="font-bold ml-2" >¡Ocurrio un error!</strong>
@@ -35,6 +35,7 @@
                   </div>
         </div>
         @endif
+
         <div class="order-2 lg:col-span-2 lg:order-1">
                 <section class="card mb-12">
                     <div class="card-body">
@@ -110,7 +111,7 @@
                     {{-- <a class="btn btn-danger btn-block mt-4" href="{{}}">Registrase</a> --}}
                     <form action="{{route('admin.courses.approved', $course)}}" class="mt-4" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-danger w-full">Aprobar curso</button>
+                        <button type="submit" class="btn btn-danger w-full">Aprobar Actividad</button>
                     </form>
 
                 </div>
