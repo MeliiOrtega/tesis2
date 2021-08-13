@@ -25,6 +25,6 @@ class CoursesStudents extends Component
     public function render()
     {
         $students = $this->course->students()->where('name', 'LIKE', '%' . $this->search . '%')->paginate(4);
-        return view('livewire.voluntary.courses-students', compact('students'))->layout('layouts.voluntary');
+        return view('livewire.voluntary.courses-students', compact('students'))->layout('layouts.voluntary', ['course'=>$this->course]);
     }
 }

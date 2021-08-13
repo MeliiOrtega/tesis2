@@ -17,7 +17,7 @@
 </div>
 
 <div class="mb-4">
-    {!! Form::label('subtitle', 'Título de la actividad') !!}
+    {!! Form::label('subtitle', 'Subtítulo de la actividad') !!}
     {!! Form::text('subtitle', null, ['class' => 'form-control rounded-md block w-full mt-1']) !!}
 
     @error('subtitle')

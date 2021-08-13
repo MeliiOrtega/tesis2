@@ -1,8 +1,5 @@
-<x-voluntary-layout>
+<x-voluntary-layout :course="$course">
 
-    <x-slot name="course">
-        {{$course->slug}}
-    </x-slot>
     <h1 class="font-bold text-2xl">Información de la actividad</h1>
                         <hr class="mt-2 mb-6">
 

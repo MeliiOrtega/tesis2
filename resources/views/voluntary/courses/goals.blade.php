@@ -1,7 +1,4 @@
-<x-voluntary-layout>
-    <x-slot name="course">
-        {{$course->slug}}
-    </x-slot>
+<x-voluntary-layout :course="$course">
 
     <div>
         @livewire('voluntary.course-goals', ['course' => $course], key('course-goals' . $course->id))
