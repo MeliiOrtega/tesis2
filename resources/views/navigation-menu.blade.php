@@ -31,8 +31,18 @@
                     <x-jet-nav-link href="{{ $nav_link['route']}}" :active="$nav_link['active']">
                         {{  $nav_link['name']}}
                     </x-jet-nav-link>
-
                     @endforeach
+                    @can('Leer actividad')
+                                <x-jet-nav-link  href="{{ route('voluntary.courses.index') }}">
+                                {{ __('Voluntario') }}
+                                </x-jet-nav-link>
+                            @endcan
+
+                            @can('Ver dashboard')
+                                <x-jet-nav-link href="{{ route('admin.home') }}">
+                                {{ __('Administrador') }}
+                                </x-jet-nav-link>
+                            @endcan
                 </div>
             </div>
 
@@ -154,8 +164,8 @@
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Iniciar Sesion</a>
 
-                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registrarse</a>
-
+                        {{-- <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registrarse</a>
+ --}}
                     @endauth
                 </div>
             </div>
@@ -182,6 +192,7 @@
             </x-jet-responsive-nav-link>
 
             @endforeach
+
 
         </div>
 
