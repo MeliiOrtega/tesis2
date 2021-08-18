@@ -111,8 +111,10 @@
                     {{-- <a class="btn btn-danger btn-block mt-4" href="{{}}">Registrase</a> --}}
                     <form action="{{route('admin.courses.approved', $course)}}" class="mt-4" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-danger w-full">Aprobar Actividad</button>
+                        <button type="submit" class="btn btn-blue w-full">Aprobar Actividad</button>
                     </form>
+
+                    <a href="{{route('admin.courses.observation', $course)}}" class="btn btn-danger w-full text-center block mt-4">Observar actividad</a>
 
                 </div>
             </section>

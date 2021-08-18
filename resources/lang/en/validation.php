@@ -145,6 +145,9 @@ return [
         'fecha' => [
             'required' => 'La fecha es requerida',
         ],
+        'body' => [
+            'required' => 'Observación es requerida',
+        ],
         'ocupacion' => [
             'required' => 'La ocupación es requerida',
         ],

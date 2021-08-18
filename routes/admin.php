@@ -14,8 +14,13 @@ Route::resource('user', UserController::class)->only(['index','edit', 'update', 
 
 Route::get('courses', [CourseController::class, 'index'])->name('courses.index');
 
-Route::get('courses/aprobados', [CourseController::class, 'aprobado'])->name('courses.aprobado');
+Route::get('courses/aprobados', [CourseController::class, 'aprobado'])->name('courses.aprobado'); //ACTIVIDADES APROBADAS
+
 
 Route::get('courses/{course}', [CourseController::class, 'show'])->name('courses.show');
 
 Route::post('courses/{course}/approved', [CourseController::class, 'approved'])->name('courses.approved');
+
+Route::get('courses/{course}/observation', [CourseController::class, 'observation'])->name('courses.observation');
+
+Route::post('courses/{course}/reject', [CourseController::class, 'reject'])->name('courses.reject');

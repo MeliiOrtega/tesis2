@@ -137,6 +137,11 @@ class CourseController extends Controller
         //
     }
 
+    public function observation(Course $course)
+    {
+        return view('voluntary.courses.observation', compact('course'));
+    }
+
     public function goals(Course $course){
         return view('voluntary.courses.goals', compact('course'));
     }
@@ -144,7 +149,8 @@ class CourseController extends Controller
     public function status(Course $course){
         $course->status=2;
         $course->save();
+        $course->observation->delete();
 
-        return back();
+        return redirect()->route('voluntary.courses.edit', $course);
     }
 }

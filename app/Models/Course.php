@@ -43,6 +43,11 @@ class Course extends Model
         return $this->hasMany('App\Models\Review');
     }
 
+    //RELACION UNO A UNO
+    public function observation(){
+        return $this->hasOne('App\Models\Observation');
+    }
+
     public function goals(){
         return $this->hasMany('App\Models\Goal');
     }
