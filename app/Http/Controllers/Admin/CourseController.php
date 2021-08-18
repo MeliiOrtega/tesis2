@@ -14,6 +14,11 @@ class CourseController extends Controller
         return view('admin.courses.index', compact('courses'));
     }
 
+    public function aprobado(){
+        $courses= Course::where('status', 3)->paginate();
+        return view('admin.courses.approved', compact('courses'));
+    }
+
     public function show(Course $course){
         return view('admin.courses.show', compact('course'));
     }
@@ -22,7 +27,7 @@ class CourseController extends Controller
         if(!$course->lessons || !$course->goals){
             return back()->with('info', 'No se puede publicar una actividad que no este completa');
         }
-        
+
         $course->status = 3;
         $course->save();
 

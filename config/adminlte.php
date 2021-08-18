@@ -269,10 +269,15 @@ return [
             'active'  =>  ['admin/users*']
 
         ],
-        ['header' => 'OPCIONES DE CURSO'],
+        ['header' => 'OPCIONES DE ACTIVIDADES'],
         [
             'text' => 'Pendientes de aprobación',
             'route'  => 'admin.courses.index',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Actividades aprobados',
+            'route'  => 'admin.courses.aprobado',
             'icon' => 'fas fa-fw fa-user',
         ],
         [

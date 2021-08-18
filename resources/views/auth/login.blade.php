@@ -1,6 +1,11 @@
 <x-guest-layout>
     <div class="flex items-center min-h-screen p-4 bg-gray-100 lg:justify-center">
-           
+        @if (session('status'))
+        <div class="mb-4 font-medium text-sm text-green-600">
+            {{ session('status') }}
+        </div>
+    @endif
+
         <div class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 mx-auto max-w-sm sm:max-w-4xl">
             <div class="lg:w-1/2 p-5 bg-white md:flex-1">
                 <x-jet-validation-errors class="mb-4" />
@@ -34,7 +39,7 @@
                     </div>
 
                     <div class="block items-center mt-6">
-                        
+
                         <div class="flex justify-around mt-6">
                             <a  class="font-bold text-gray-700 hover:text-red-600" href="{{ route('register') }}">¿Eres nuevo?</a>
 
@@ -55,7 +60,7 @@
                             Quieres formar parte de la vida de un adulto mayor creando actividades, agregando contenido y realizando videollamada con ellos. Se parte de nuestro equipo de voluntarios. ¡Que esperas!
                         </p>
                     </div>
-                    
+
                     <div class="mb-4 text-center">
                         <a  class="btn btn-primary" href="{{ route('register.voluntary') }}" > ¡Registraste aqui!</a>
                     </div>
@@ -63,7 +68,7 @@
             </div>
         </div>
     </div>
-    
+
 
 
 </x-guest-layout>
