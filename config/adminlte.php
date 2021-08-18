@@ -271,6 +271,11 @@ return [
         ],
         ['header' => 'OPCIONES DE ACTIVIDADES'],
         [
+            'text' => 'Categorias',
+            'route'  => 'admin.categories.index',
+            'icon' => 'fas fa-fw fa-cogs',
+        ],
+        [
             'text' => 'Pendientes de aprobación',
             'route'  => 'admin.courses.index',
             'icon' => 'fas fa-fw fa-user',
@@ -278,8 +283,10 @@ return [
         [
             'text' => 'Actividades aprobados',
             'route'  => 'admin.courses.aprobado',
-            'icon' => 'fas fa-fw fa-user',
+            'icon' => 'fas fa-clipboard-check',
+           
         ],
+
         [
             'text' => 'change_password',
             'url'  => 'admin/settings',
