@@ -33,7 +33,7 @@
                     </x-jet-nav-link>
                     @endforeach
                     @can('Leer actividad')
-                                <x-jet-nav-link  href="{{ route('voluntary.courses.index') }}">
+                                <x-jet-nav-link  href="{{ route('voluntary.courses.index')}}" :active="request()->routeIs('voluntary.*')">
                                 {{ __('Voluntario') }}
                                 </x-jet-nav-link>
                             @endcan
