@@ -31,12 +31,24 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+        foreach ($request->roles as $rol) {
+            if($rol == 'voluntario'){
+                $user->update([
+                    'role' => 'voluntario'
+                ]);
+                $user->roles()->sync($request->roles);
+            return redirect()->route('admin.users.edit', $user);
+            }
+            else{
+                $user->update([
+                    'role' => 'usuario'
+                ]);
+                $user->roles()->sync($request->roles);
+            return redirect()->route('admin.users.edit', $user);
+            }
+        }
 
-
-
-
-
-        if ($user->roles('voluntario')) {
+       /*  if ($request->name == 'voluntario') {
 
             $user->update([
                 'role' => 'voluntario'
@@ -44,7 +56,7 @@ class UserController extends Controller
 
             $user->roles()->sync($request->roles);
             return redirect()->route('admin.users.edit', $user);
-        }
+        } */
         /* elseif ($user->roles('voluntario')){
 
             $user->update([
