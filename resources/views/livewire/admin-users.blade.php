@@ -27,7 +27,7 @@
                     <td>{{$user->email}}</td>
                     <td>{{$user->role}}</td>
                     <td width="10px">
-                        <a class="btn btn-blue"href="{{route('admin.users.edit', $user)}}">Ver/Editar</a>
+                        <a class="btn btn-blue"href="{{route('admin.users.edit', $user)}}">Editar</a>
                     </td>
                     <td width="10px">
                         <form action="{{route('admin.users.destroy', $user)}}" method="POST">

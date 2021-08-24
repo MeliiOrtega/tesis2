@@ -25,7 +25,7 @@
 @stop
 
 @section('js')
-   
+    <script> console.log('Hi!'); </script>
     <script src="{{ mix('js/app.js') }}" defer></script>
     @livewireScripts
 
