@@ -1,10 +1,10 @@
 <div>
     <p>{{$user->name}}</p>
     {{-- @foreach ($user->courses_dictated as $course)
-    
-        
+
+
     @endforeach --}}
-  
+
 
 
     <x-table-responsive>
@@ -24,7 +24,7 @@
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Estado
                     </th>
-                    
+
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -38,7 +38,7 @@
                           @else
                           <img class="h-10 w-10 rounded-full object-cover object-center" src="https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
 
-                           
+
                           @endisset
                         </div>
                         <div class="ml-4">
@@ -87,24 +87,25 @@
                         @break
                       @default
                     @endswitch
-                    </td>       
+                    </td>
                   </tr>
                   @endforeach
                   <!-- More people... -->
                 </tbody>
-                
+
               </table>
              {{--  <div class="px-6 py-4">
                 {{$user->courses_dictated->links()}}
                 {{$user->courses_dictated->links('vendor.pagination.bootstrap-4')}}
             </div> --}}
-             
+
             @else
               <div class="px-6 py-4 font-bold">
                 No hay actividades
               </div>
             @endif
     </x-table-responsive>
-        
-   
+
+
+
 </div>

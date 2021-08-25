@@ -25,8 +25,8 @@
 @stop
 
 @section('js')
-   
-    <script src="{{ mix('js/app.js') }}" defer></script>
-    @livewireScripts
+
+    {{-- <script src="{{ mix('js/app.js') }}" defer></script>
+    @livewireScripts --}}
 
 @stop
