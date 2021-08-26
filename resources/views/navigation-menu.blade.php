@@ -40,7 +40,7 @@
 
                             @can('Ver dashboard')
                                 <x-jet-nav-link href="{{ route('admin.home') }}">
-                                {{ __('Administrador') }}
+                                {{ __('Administración') }}
                                 </x-jet-nav-link>
                             @endcan
 
@@ -137,7 +137,7 @@
                                 {{ __('Perfil') }}
                             </x-jet-dropdown-link>
 
-                            @can('Leer actividad')
+                            {{-- @can('Leer actividad')
                                 <x-jet-dropdown-link href="{{ route('voluntary.courses.index') }}">
                                 {{ __('Voluntario') }}
                                 </x-jet-dropdown-link>
@@ -147,7 +147,7 @@
                                 <x-jet-dropdown-link href="{{ route('admin.home') }}">
                                 {{ __('Administrador') }}
                                 </x-jet-dropdown-link>
-                            @endcan
+                            @endcan --}}
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                 <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -201,6 +201,24 @@
 
             @endforeach
 
+            @can('Leer actividad')
+                                <x-jet-responsive-nav-link  href="{{ route('voluntary.courses.index')}}" :active="request()->routeIs('voluntary.*')">
+                                {{ __('Voluntario') }}
+                                </x-jet-responsive-nav-link>
+                            @endcan
+
+                            @can('Ver dashboard')
+                                <x-jet-responsive-nav-link href="{{ route('admin.home') }}">
+                                {{ __('Administración') }}
+                                </x-jet-responsive-nav-link>
+                            @endcan
+
+                            @can('Ver mis actividades')
+                                <x-jet-responsive-nav-link href="">
+                                {{ __('Mis actividades') }}
+                                </x-jet-responsive-nav-link>
+                            @endcan
+
 
         </div>
 
@@ -226,7 +244,7 @@
                     Perfil
                 </x-jet-responsive-nav-link>
 
-                @can('Leer actividad')
+                {{-- @can('Leer actividad')
                     <x-jet-responsive-nav-link href="{{ route('voluntary.courses.index') }}" :active="request()->routeIs('profile.show')">
                                     Voluntario
                                     </x-jet-responsive-nav-link>
@@ -237,7 +255,7 @@
                                     Administrador
                                     </x-jet-responsive-nav-link>
                 @endcan
-
+ --}}
 
                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                     <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
