@@ -3,7 +3,7 @@
 @section('title', 'Momment')
 
 @section('content_header')
-    <h1>Actividades Pendientes de aprobación</h1>
+    <h1>Actividades Aprobadas</h1>
 @stop
 
 @section('content')

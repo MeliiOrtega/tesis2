@@ -281,10 +281,10 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'Actividades aprobados',
+            'text' => 'Actividades aprobadas',
             'route'  => 'admin.courses.aprobado',
             'icon' => 'fas fa-clipboard-check',
-           
+
         ],
 
         [
