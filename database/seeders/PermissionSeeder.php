@@ -14,48 +14,56 @@ class PermissionSeeder extends Seeder
      */
     public function run()
     {
-        Permission::create([
+        Permission::create([  //1
             'name' => 'Crear actividad'
         ]);
 
-        Permission::create([
+        Permission::create([  //2
             'name' => 'Leer actividad'
         ]);
 
-        Permission::create([
+        Permission::create([  //3
             'name' => 'Actualizar actividad'
         ]);
 
-        Permission::create([
+        Permission::create([  //4
             'name' => 'Eliminar actividad'
         ]);
 
-        Permission::create([
+        Permission::create([  //5
             'name' => 'Ver dashboard'
         ]);
 
-        Permission::create([
+        Permission::create([ //6
             'name' => 'Crear rol'
         ]);
 
-        Permission::create([
+        Permission::create([ //7
             'name' => 'Listar rol'
         ]);
 
-        Permission::create([
+        Permission::create([ //8
             'name' => 'Editar rol'
         ]);
 
-        Permission::create([
+        Permission::create([ //9
             'name' => 'Eliminar rol'
         ]);
 
-        Permission::create([
+        Permission::create([ //10
             'name' => 'Leer usuarios'
         ]);
 
-        Permission::create([
+        Permission::create([ //11
             'name' => 'Editar usuarios'
+        ]);
+
+        Permission::create([ //12
+            'name' => 'Eliminar usuarios'
+        ]);
+
+        Permission::create([ //13
+            'name' => 'Ver mis actividades'
         ]);
     }
 }

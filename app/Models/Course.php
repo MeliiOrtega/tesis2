@@ -20,6 +20,7 @@ class Course extends Model
     public function getRatingAttribute(){
          //SABER SI TIENNE O NO REVIEWS
          if($this->reviews_count){
+
             return round($this->reviews->avg('rating'),1);
          }else{
              return 0;

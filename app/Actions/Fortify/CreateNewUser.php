@@ -44,6 +44,7 @@ class CreateNewUser implements CreatesNewUsers
             'fecha' => $input['fecha']
         ]);
 
+        $user->assignRole('usuario');
         return $user;
 
        /*  $role = $input['role'];

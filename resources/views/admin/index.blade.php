@@ -45,14 +45,14 @@
             </div>
         </div>
 
-        <div class="bg-pink-600 py-2 rounded-lg">
+        <div class="bg-purple-600 py-2 rounded-lg">
             <div class="flex px-2 justify-around">
 
                 <i class="fas fa-chalkboard text-white  text-4xl text-center py-4"></i>
                 <div class="ml-4">
 
                     <h2 class="text-white px-4 text-4xl text-center"><span>{{$count_course}}</span></h2>
-                    <hr class=" bg-pink-400 my-2">
+                    <hr class=" bg-purple-400 my-2">
                     <h3 class="text-white px-2 font-semibold">Actividades</h3>
                 </div>
             </div>

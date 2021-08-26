@@ -43,6 +43,14 @@
                                 {{ __('Administrador') }}
                                 </x-jet-nav-link>
                             @endcan
+
+                            @can('Ver mis actividades')
+                                <x-jet-nav-link href="">
+                                {{ __('Mis actividades') }}
+                                </x-jet-nav-link>
+                            @endcan
+
+
                 </div>
             </div>
 

@@ -32,7 +32,10 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
-        foreach ($request->roles as $rol) {
+
+        $user->roles()->sync($request->roles);
+            return redirect()->route('admin.users.edit', $user);
+        /* foreach ($request->roles as $rol) {
             if($rol == 'voluntario'){
                 $user->update([
                     'role' => 'voluntario'
@@ -47,7 +50,7 @@ class UserController extends Controller
                 $user->roles()->sync($request->roles);
             return redirect()->route('admin.users.edit', $user);
             }
-        }
+        } */
 
        /*  if ($request->name == 'voluntario') {
 
@@ -72,7 +75,7 @@ class UserController extends Controller
 
     public function show(User $user){
         $courses = Course::where('user_id',$user->id)->latest('id')->paginate();
-        
+
         return view('admin.users.show', compact('user', 'courses'));
     }
 

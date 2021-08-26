@@ -5,7 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Lesson;
+use App\Models\Review;
 use App\Observers\LessonObserver;
+use App\Observers\ReviewObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
     {
 
         Lesson::observe(LessonObserver::class);
+        Review::observe(ReviewObserver::class);
 
         Blade::directive('routeIs', function ($expression) {
             return "<?php if(Request::url() == route($expression)): ?>";
