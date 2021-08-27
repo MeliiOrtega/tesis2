@@ -1,3 +1,4 @@
+<div class="grid grid-cols-2 gap-6">
 <div class="mb-4">
     {!! Form::label('title','Título de la actividad') !!}
     {!! Form::text('title', null, ['class' => 'form-control rounded-md block w-full mt-1'. ($errors->has('title') ? ' border-red-500'  : '')]) !!}
@@ -24,6 +25,7 @@
     <strong class="text-xs  text-red-600">{{$message}}</strong>
 @enderror
 </div>
+</div>
 
 <div class="mb-4">
     {!! Form::label('description', 'Descripción de la actividad') !!}
@@ -34,6 +36,7 @@
 @enderror
 </div>
 
+<div class="grid grid-cols-2 gap-6">
 <div class="mb-4">
     {!! Form::label('category_id', 'Categoría:') !!}
     {!! Form::select('category_id', $categories, null, ['class'=> 'form-control rounded-md block w-full mt-1']) !!}
@@ -46,6 +49,7 @@
     @error('week')
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
+</div>
 </div>
 
 <div class="grid grid-cols-2 gap-6">
