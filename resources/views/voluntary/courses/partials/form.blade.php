@@ -1,4 +1,3 @@
-<div class="grid grid-cols-2 gap-6">
 <div class="mb-4">
     {!! Form::label('title','Título de la actividad') !!}
     {!! Form::text('title', null, ['class' => 'form-control rounded-md block w-full mt-1'. ($errors->has('title') ? ' border-red-500'  : '')]) !!}
@@ -8,14 +7,14 @@
     @enderror
 </div>
 
-{{-- <div class="mb-4">
+<div class="mb-4 hidden">
     {!! Form::label('slug', 'Slug de la actividad') !!}
     {!! Form::text('slug', null, ['readonly' => 'readonly' ,'class' => 'form-control bg-gray-200 rounded-md block w-full mt-1']) !!}
 
     @error('slug')
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
-</div> --}}
+</div>
 
 <div class="mb-4">
     {!! Form::label('subtitle', 'Subtítulo de la actividad') !!}
@@ -24,7 +23,6 @@
     @error('subtitle')
     <strong class="text-xs  text-red-600">{{$message}}</strong>
 @enderror
-</div>
 </div>
 
 <div class="mb-4">
@@ -35,7 +33,7 @@
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
 </div>
-<div class="grid grid-cols-2 gap-6">
+
 <div class="mb-4">
     {!! Form::label('category_id', 'Categoría:') !!}
     {!! Form::select('category_id', $categories, null, ['class'=> 'form-control rounded-md block w-full mt-1']) !!}
@@ -48,7 +46,6 @@
     @error('week')
     <strong class="text-xs text-red-600">{{$message}}</strong>
 @enderror
-</div>
 </div>
 
 <div class="grid grid-cols-2 gap-6">

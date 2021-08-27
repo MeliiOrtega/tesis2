@@ -43,7 +43,7 @@ class CourseController extends Controller
        // return view('voluntary.courses.show');
        $request->validate([
            'title' => 'required',
-           'slug' => 'required|unique:courses',
+
            'subtitle' => 'required',
            'description' => 'required',
            'category_id' => 'required',
@@ -98,7 +98,7 @@ class CourseController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'slug' => 'required|unique:courses,slug,'. $course->id,
+            
             'subtitle' => 'required',
             'description' => 'required',
             'category_id' => 'required',
