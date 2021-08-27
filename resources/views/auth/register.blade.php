@@ -13,10 +13,10 @@
                         <p>Ingresa tu información</p>
                     </div>
                     <x-jet-validation-errors class="mb-4" />
-    
+
                         <form method="POST" action="{{ route('register') }}" >
                             @csrf
-    
+
                             <div class="flex -mx-3">
                                 <div class="w-full px-3 mb-5">
                                     <label  class="text-sm font-bold px-1">Email
@@ -25,7 +25,7 @@
 
                                 </div>
                             </div>
-    
+
                             <div class="flex -mx-3">
                                 <div class="w-full px-3 mb-5">
                                     <label  class="text-sm font-bold px-1">Nombre
@@ -33,26 +33,34 @@
                                     <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"type="text" id="name"  name="name" value="{{ old('name') }}" required  autocomplete="name"/>
                                 </div>
                             </div>
-    
+
                             <h1 class="text-sm mt-2">Contraseña</h1>
                             <hr>
+                            <p>La contraseña debe contener:</p>
+                            <ul>
+                                <li>- Almenos un número</li>
+                                <li>- Almenos Una letra mayúscula</li>
+                                <li>- Almenos Una letra minuscula</li>
+                                <li>- Almenos un simbolo !,$,#,%</li>
+                            </ul>
                             <div class="flex -mx-3">{{-- CONTRASEÑA --}}
-    
+
+
                                 <div  class="w-1/2 px-3 mb-5">
                                     <label class="text-sm font-bold px-1">Contraseña
                                     </label>
                                     <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="password" id="password" name="password" required autocomplete="new-password" />
                                 </div>
-    
+
                                 <div class="w-1/2 px-3 mb-5">
                                     <label class="text-sm font-bold px-1">Confirmar
                                     </label>
                                     <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="password" id="password_confirmation" name="password_confirmation" required autocomplete="new-password"/>
-                            
+
                                 </div>
                             </div>{{-- CONTRASEÑA --}}
                                 <hr class="mb-2">
-    
+
                                 <div class="flex -mx-3">
                                     <div class="w-full px-3 mb-5">
                                         <label  class="text-sm font-bold px-1">Fecha de nacimiento
@@ -60,13 +68,13 @@
                                         <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="date" id="fecha" name="fecha" value="{{ old('fecha') }}" required/>
                                     </div>
                                 </div>
-    
+
                                 <div class="flex -mx-3">
                                     <div class="w-full px-3 mb-5">
                                         <label  class="text-sm font-bold px-1">Celular
                                         </label>
                                         <input class="w-full pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="tel" name="phone" value="{{ old('phone') }}" >
-                                        
+
                                     </div>
                                 </div>
 
@@ -75,22 +83,22 @@
                                     <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                                         {{ __('¿Ya tienes cuenta?') }}
                                     </a>
-                    
+
                                     <x-jet-button class="ml-4">
                                         {{ __('Registrarse') }}
                                     </x-jet-button>
                                 </div>
                     </form>
                     </div>
-    
+
                 </div>
-    
-    
-    
-    
+
+
+
+
             </div>
         </div>
-    
+
     </div>
-    
+
 </x-guest-layout>

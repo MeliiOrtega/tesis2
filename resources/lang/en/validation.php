@@ -156,7 +156,9 @@ return [
         ],
         'phone' => [
             'required' => 'El numero de celular es requerido',
-            
+            'max' => 'El número de celular debe tener :max números',
+            'min' => 'El número de celular debe tener :min números',
+
         ],
 
         'password_confirmation' => [
