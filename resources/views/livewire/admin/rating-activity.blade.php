@@ -15,14 +15,14 @@
                 <thead>
                   <tr>
                     <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-2 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Actividad</th>
-                    <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-2 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Valoracion</th>
+                    <th class="px-4 bg-gray-100 dark:bg-gray-600 text-gray-500 dark:text-gray-100 align-middle border border-solid border-gray-200 dark:border-gray-500 py-2 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">Valoración</th>
 
                   </tr>
                 </thead>
                 <tbody>
                     @foreach ($courses as $course)
                     <tr class="text-gray-700 dark:text-gray-100">
-                        <th class="border-t-0 pl-2 align-middle border-l-0 border-r-0 whitespace-normal p-2 text-left">
+                        <th class="border-t-0 pl-2 align-middle border-l-0 border-r-0 whitespace-normal p-3 text-left">
                             <p class="text-xs">{{$course->title}}</p>
                             <p class="text-xs text-gray-500">{{$course->category->name}}</p>
 

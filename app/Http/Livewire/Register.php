@@ -30,10 +30,10 @@ public $fecha, $cedula, $ocupacion, $direccion;
         return [
         'email' => 'required|string|email|max:255|unique:users',
         'name' => 'required',
-        'password' =>['required', 
+        'password' =>['required', 'confirmed',
             'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'
         ],
-        'password_confirmation' => 'required|confirmed',
+        'password_confirmation' => 'required',
         'phone' => 'required||regex:/^[0-9]{10}$/',
         'fecha' => 'required',
         'cedula' => 'required|regex:/^[0-9]{10}$/',

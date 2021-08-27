@@ -68,7 +68,7 @@
         </div>
 
         <div>
-           {{--  @livewire('admin.rating-activity') --}}
+           @livewire('admin.user-last')
         </div>
     </div>
 @stop
