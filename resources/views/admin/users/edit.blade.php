@@ -27,7 +27,7 @@
         </div>
 
 
-        <div class="card">
+        {{-- <div class="card">
             <div class="card-body">
 
                 <h1 class="h5">Datos personales</h1>
@@ -79,7 +79,7 @@
                 {!! Form::close()!!}
 
             </div>
-        </div>
+        </div> --}}
 
 
         @if ($user->role == 'voluntario')

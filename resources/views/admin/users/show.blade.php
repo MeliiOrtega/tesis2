@@ -1,5 +1,5 @@
 <div>
-    <p>{{$user->name}}</p>
+   {{--  <p>{{$user->name}}</p> --}}
     {{-- @foreach ($user->courses_dictated as $course)
 
 
