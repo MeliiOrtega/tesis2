@@ -61,6 +61,7 @@ class RoleController extends Controller
             'name' => $request->name
         ]);
 
+        
         $role->permissions()->attach($request->permissions);
 
         return redirect()->route('admin.roles.index')->with('info', 'Rol creado!');

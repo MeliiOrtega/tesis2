@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Category;
-
+use App\Models\Day;
 
 class CourseController extends Controller
 {
@@ -28,8 +28,9 @@ class CourseController extends Controller
      */
     public function create()
     {
+        $days = Day::all();
         $categories = Category::pluck('name', 'id');
-        return view('voluntary.courses.create', compact('categories'));
+        return view('voluntary.courses.create', compact('categories', 'days'));
     }
 
     /**
@@ -54,6 +55,8 @@ class CourseController extends Controller
        ]);
 
        $course = Course::create($request->all());
+
+       $course->days()->attach($request->days);
 
        if($request->file('file')){
             $url = Storage::put('activity', $request->file('file'));
@@ -83,8 +86,9 @@ class CourseController extends Controller
      */
     public function edit(Course $course)
     {
+        $days = Day::all();
         $categories = Category::pluck('name', 'id');
-        return view('voluntary.courses.edit', compact('course', 'categories'));
+        return view('voluntary.courses.edit', compact('course', 'categories', 'days'));
     }
 
     /**
@@ -98,7 +102,7 @@ class CourseController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            
+
             'subtitle' => 'required',
             'description' => 'required',
             'category_id' => 'required',
@@ -108,6 +112,8 @@ class CourseController extends Controller
             'hourEnd' => 'required',
         ]);
         $course->update($request->all());
+
+        $course->days()->sync($request->days);
 
         if($request->file('file')){
             $url = Storage::put('activity', $request->file('file'));

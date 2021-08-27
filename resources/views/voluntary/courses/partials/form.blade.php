@@ -51,6 +51,14 @@
 @enderror
 </div>
 </div>
+@foreach ($days as $day)
+<div>
+     <label>
+    {!! Form::checkbox('days[]', $day->id, null, ['class' =>'mr-1']) !!}
+    {{$day->name}}
+    </label>
+</div>
+@endforeach
 
 <div class="grid grid-cols-2 gap-6">
     <div class="mb-4">

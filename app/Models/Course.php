@@ -72,6 +72,11 @@ class Course extends Model
         return $this->belongsToMany('App\Models\User');
     }
 
+    //Relacion muchos a muchos
+    public function days(){
+        return $this->belongsToMany('App\Models\Day');
+    }
+
     //relacion uno a uno polimorfica
     public function image(){
         return $this->morphOne('App\Models\Image', 'imageable');

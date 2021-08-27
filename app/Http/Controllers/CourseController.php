@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Category;
+use App\Models\Day;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -23,6 +24,7 @@ class CourseController extends Controller
     public function show(Course $course){
 
        $this->authorize('published', $course);
+       
 
         $similares = Course::where('category_id',$course->category_id)
                             ->where('id', '!=', $course->id)
