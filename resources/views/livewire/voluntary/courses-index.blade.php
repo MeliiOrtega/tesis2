@@ -8,7 +8,7 @@
           @if($courses->count())
           <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
-                  <tr></tr>
+                  <tr>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Nombre
                     </th>
@@ -37,7 +37,7 @@
                           @else
                           <img class="h-10 w-10 rounded-full object-cover object-center" src="https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
 
-                           
+
                           @endisset
                         </div>
                         <div class="ml-4">

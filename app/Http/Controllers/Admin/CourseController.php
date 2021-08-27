@@ -17,7 +17,7 @@ class CourseController extends Controller
     }
 
     public function aprobado(){
-        $courses= Course::where('status', 3)->paginate();
+        $courses= Course::where('status', 3)->orderBy('avg_rating','desc')->paginate(5);
         return view('admin.courses.approved', compact('courses'));
     }
 
@@ -53,7 +53,7 @@ class CourseController extends Controller
         $course->observation()->create($request->all());
         $course->status = 1;
         $course->save();
-        
+
         $mail = new RejectActivity($course);
         Mail::to($course->teacher->email)->queue($mail);
         return redirect()->route('admin.courses.index')->with('info', 'La actividad se ha rechazado con exito');

@@ -61,11 +61,15 @@
     </div>
 
 
-    <div>
-        @foreach ($rating as $rating1)
-            <li>{{$rating1->title}}</li>
-            <li>{{$rating1->rating}}</li>
-        @endforeach
+    <div class="grid lg:grid-cols-2 gap-4 my-4 grid-cols-1">
+        <div class="">
+
+            @livewire('admin.rating-activity')
+        </div>
+
+        <div>
+           {{--  @livewire('admin.rating-activity') --}}
+        </div>
     </div>
 @stop
 
@@ -82,7 +86,7 @@
 
 @section('js')
 
-    {{-- <script src="{{ mix('js/app.js') }}" defer></script>
-    @livewireScripts
- --}}
+    <script src="{{ mix('js/app.js') }}" defer></script>
+   {{--  @livewireScripts --}}
+
 @stop
