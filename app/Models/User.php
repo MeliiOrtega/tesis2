@@ -92,7 +92,7 @@ class User extends Authenticatable
 
     //RELACION MUCHOS A MUCHOS -->Voluntarios del curso
     public function courses_enrolled(){
-        return $this->belongsToMany('App\Models\Course');
+        return $this->belongsToMany('App\Models\Course')->withTimestamps();
     }
 
 }

@@ -69,7 +69,7 @@ class Course extends Model
     }
     //Relacion muchos a muchos
     public function students(){
-        return $this->belongsToMany('App\Models\User');
+        return $this->belongsToMany('App\Models\User')->withTimestamps();;
     }
 
     //Relacion muchos a muchos

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\User\UserCourseController;
 use App\Http\Livewire\CourseStatus;
 use App\Http\Livewire\Register;
 
@@ -30,5 +31,7 @@ Route::post('courses/{course}/enrolled', [CourseController::class, 'enrolled'])-
 
 //CON ESTO TRABAJA EL LIVEWARE
 Route::get('course-status/{course}', CourseStatus::class)->name('courses.status')->middleware('auth');
+
+Route::get('user/course', [UserCourseController::class, 'index'])->name('usercourse');
 
 

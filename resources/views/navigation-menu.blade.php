@@ -45,7 +45,7 @@
                             @endcan
 
                             @can('Ver mis actividades')
-                                <x-jet-nav-link href="">
+                                <x-jet-nav-link href="{{route('usercourse')}}">
                                 {{ __('Mis actividades') }}
                                 </x-jet-nav-link>
                             @endcan
@@ -214,7 +214,7 @@
                             @endcan
 
                             @can('Ver mis actividades')
-                                <x-jet-responsive-nav-link href="">
+                                <x-jet-responsive-nav-link href="{{route('usercourse')}}">
                                 {{ __('Mis actividades') }}
                                 </x-jet-responsive-nav-link>
                             @endcan
