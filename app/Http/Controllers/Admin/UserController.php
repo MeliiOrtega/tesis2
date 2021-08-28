@@ -32,6 +32,16 @@ class UserController extends Controller
 
     public function update(Request $request, User $user)
     {
+        $request->validate([
+            'email' => 'required|string|email|max:255|unique:users',
+            'name' => 'required',
+            'phone' => 'required||regex:/^[0-9]{10}$/',
+            'fecha' => 'required',
+            'cedula' => 'required|regex:/^[0-9]{10}$/',
+            'ocupacion' => 'required',
+            'direccion' => 'required|'
+        ]);
+        $user->update($request->all());
 
         $user->roles()->sync($request->roles);
             return redirect()->route('admin.users.edit', $user);
