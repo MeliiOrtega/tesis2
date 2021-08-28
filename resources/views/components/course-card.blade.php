@@ -4,9 +4,9 @@
                 @isset($course->image)
                     <img class = "h-36 w-full object-cover" src="{{Storage::url($course->image->url)}}" alt="">
                 @else
-                     <img class="rounded-lg h-60 w-full object-cover" src="https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                     <img class="h-36 w-full object-cover" src="https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
                 @endisset
-                
+
                 <div class="card-body">
                         <h1 class="card-title">{{Str::limit($course->title, 30)}}</h1>
                         <p class="text-gray-500 text-sm mb-2">Voluntario: {{$course->teacher->name}}</p>

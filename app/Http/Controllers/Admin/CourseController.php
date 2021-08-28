@@ -44,6 +44,10 @@ class CourseController extends Controller
         return view('admin.courses.observation',compact('course'));
     }
 
+    public function CourseUser(Course $course){
+        return view('admin.courses.user-course',compact('course'));
+    }
+
     public function reject(Request $request, Course $course){
         $request->validate([
             'body' => 'required'
