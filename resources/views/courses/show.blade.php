@@ -4,7 +4,11 @@
     <section class="bg-indigo-600 py-12 mb-12 text-white" >
         <div class="container grid lg:grid-cols-2 grid-cols-1 gap-6">
             <figure>
+                @if($course->image)
                 <img class="rounded-lg h-60 w-full object-cover" src="{{Storage::url($course->image->url)}}" alt="">
+                @else
+                <img class="rounded-lg h-60 w-full object-cover" src="https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                @endif
             </figure>
 
             <div>
