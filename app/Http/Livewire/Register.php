@@ -34,11 +34,11 @@ public $fecha, $cedula, $ocupacion, $direccion;
             'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'
         ],
         'password_confirmation' => 'required',
-        'phone' => 'required||regex:/^[0-9]{10}$/',
+        'phone' => 'required|regex:/^[0-9]{10}$/',
         'fecha' => 'required',
         'cedula' => 'required|regex:/^[0-9]{10}$/',
         'ocupacion' => 'required',
-        'direccion' => 'required|'
+        'direccion' => 'required'
 
         ];
     }

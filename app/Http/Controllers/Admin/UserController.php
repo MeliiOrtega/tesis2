@@ -33,13 +33,13 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|email|unique:users,email,'.$user->id,
             'name' => 'required',
-            'phone' => 'required||regex:/^[0-9]{10}$/',
+            'phone' => 'required|regex:/^[0-9]{10}$/',
             'fecha' => 'required',
-            'cedula' => 'required|regex:/^[0-9]{10}$/',
+            /* 'cedula' => 'required|regex:/^[0-9]{10}$/',
             'ocupacion' => 'required',
-            'direccion' => 'required|'
+            'direccion' => 'required' */
         ]);
         $user->update($request->all());
 
