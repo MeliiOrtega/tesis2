@@ -21,6 +21,8 @@
                             <th>Nombre</th>
                             <th>Categoría</th>
                             <th>Calificacion</th>
+                            <th>Adultos Registrados</th>
+                            <th></th>
                         </tr>
                 </thead>
                 <tbody>
@@ -44,7 +46,7 @@
                         {{-- <td>
                             <a class="btn btn-primary"href="{{route('admin.courses.show', $course)}}">Revisar</a>
                         </td> --}}
-                        <td></td>
+                        <td>{{$course->students_count}}</td>
                     </tr>
 
                     @endforeach

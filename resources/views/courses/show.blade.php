@@ -96,7 +96,8 @@
                     </div>
                     {{-- <a class="btn btn-danger btn-block mt-4" href="{{}}">Registrase</a> --}}
 
-                   @can('enrolled', $course)
+                   @role('usuario')
+                    @can('enrolled', $course)
                         <a class="btn btn-danger btn-block mt-4" href="{{route('courses.status', $course)}}">Ver contenido</a>
 
 
@@ -106,6 +107,7 @@
                             <button class="btn btn-danger btn-block mt-4" type="submit">Registrarse</button>
                         </form>
                    @endcan
+                   @endrole
 
                 </div>
             </section>

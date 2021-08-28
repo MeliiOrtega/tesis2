@@ -14,6 +14,7 @@ class HomeController extends Controller
         */
      // return Course::find(2)->rating;
        return view('welcome', compact('courses'));
+       
     }
 
 }

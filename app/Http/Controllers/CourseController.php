@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Category;
 use App\Models\Day;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -23,8 +24,9 @@ class CourseController extends Controller
 
     public function show(Course $course){
 
-       $this->authorize('published', $course);
-       
+       /* $this->authorize('published', $course); */
+       $user = User::all();
+
 
         $similares = Course::where('category_id',$course->category_id)
                             ->where('id', '!=', $course->id)
@@ -32,7 +34,7 @@ class CourseController extends Controller
                             ->latest('id')
                             ->take(5)
                             ->get();
-        return view('courses.show', compact('course','similares'));
+        return view('courses.show', compact('course','similares', 'user'));
     }
 
     public function category(Category $category){
