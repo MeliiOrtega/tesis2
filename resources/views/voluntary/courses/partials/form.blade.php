@@ -42,7 +42,7 @@
     {!! Form::select('category_id', $categories, null, ['class'=> 'form-control rounded-md block w-full mt-1']) !!}
 </div>
 
-<div class="mb-4">
+<div class="mb-4 hidden">
     {!! Form::label('week', 'Dias de la semana') !!}
     {!! Form::text('week', null, ['class' => 'form-control rounded-md block w-full mt-1']) !!}
 
@@ -51,16 +51,20 @@
 @enderror
 </div>
 </div>
-@foreach ($days as $day)
 <div>
-     <label>
-    {!! Form::checkbox('days[]', $day->id, null, ['class' =>'mr-1']) !!}
-    {{$day->name}}
-    </label>
-</div>
-@endforeach
+    {!! Form::label('Dias de la semana:') !!}
+    <div class="mt-2">
+    @foreach ($days as $day)
+    <div class='inline-flex ml-2 '>
 
-<div class="grid grid-cols-2 gap-6">
+
+        {!! Form::checkbox('days[]', $day->id, null, ['class' =>'mr-1']) !!}
+        {{$day->name}}
+    </div>
+    @endforeach
+    </div>
+
+<div class="grid grid-cols-2 gap-6 mt-4">
     <div class="mb-4">
         {!! Form::label('hourStart', 'Hora de inicio') !!}
         {!! Form::time('hourStart', null, ['class' => 'form-control rounded-md block w-full mt-1']) !!}

@@ -20,7 +20,7 @@
                 <p class="mb-2"><i class="fas fa-calendar-week"></i> Dias:
 
                     @foreach ($course->days as $day)
-                    <div class="flex">
+                    <div class="inline-flex ml-2 mb-2">
                         <p>{{$day->name}}</p>
                     </div>
 
