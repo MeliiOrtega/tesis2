@@ -49,7 +49,7 @@ class CourseController extends Controller
            'description' => 'required',
            'category_id' => 'required',
            'file' => 'image',
-           'week' => 'required',
+          /*  'week' => 'required', */
            'hourStart' => 'required',
            'hourEnd' => 'required',
        ]);
@@ -107,7 +107,8 @@ class CourseController extends Controller
             'description' => 'required',
             'category_id' => 'required',
             'file' => 'image',
-            'week' => 'required',
+            /* 'week' => 'required', */
+            'days' => 'required',
             'hourStart' => 'required',
             'hourEnd' => 'required',
         ]);

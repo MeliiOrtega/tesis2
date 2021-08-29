@@ -40,10 +40,10 @@
                         <hr>
                         <p>La contraseña debe contener:</p>
                         <ul>
-                            <li>- Almenos un número</li>
-                            <li>- Almenos Una letra mayúscula</li>
-                            <li>- Almenos Una letra minuscula</li>
-                            <li>- Almenos un simbolo !,$,#,%</li>
+                            <li>- Al menos un número</li>
+                            <li>- Al menos Una letra mayúscula</li>
+                            <li>- Al menos Una letra minuscula</li>
+                            <li>- Al menos un simbolo !,$,#,%</li>
 
                         </ul>
                         <div class="flex -mx-3">{{-- CONTRASEÑA --}}
@@ -128,10 +128,10 @@
                             <a class="underline text-lg text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                                 ¿Ya tienes cuenta?
                             </a>
-            
+
                             <input class="btn btn-primary" type="submit" value="Registrase">
                         </div>
-                            
+
                 </form>
                 </div>
 
