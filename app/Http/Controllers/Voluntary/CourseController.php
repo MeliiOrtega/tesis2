@@ -50,6 +50,7 @@ class CourseController extends Controller
            'category_id' => 'required',
            'file' => 'image',
           /*  'week' => 'required', */
+          'days' => 'required',
            'hourStart' => 'required',
            'hourEnd' => 'required',
        ]);

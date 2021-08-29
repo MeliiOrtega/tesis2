@@ -119,7 +119,12 @@
             <aside class="hidden lg:block">
                 @foreach ($similares as $similar)
                 <article class="flex mb-6">
+                    @if($similar->image)
                     <img class="h-32 w-40 object-cover" src="{{Storage::url($similar->image->url)}}" alt="">
+                @else
+                <img class="h-32 w-40 object-cover" src="https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500https://images.pexels.com/photos/6787953/pexels-photo-6787953.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+                @endif
+
                     <div class="ml-3">
                         <h1><a class="font-bold text-gray-500 mb-3" href="{{route('courses.show', $similar)}}">{{Str::limit($similar->title, 40)}}</a></h1>
                         <div class="flex items-center mb-2">
