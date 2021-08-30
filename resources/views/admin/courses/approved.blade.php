@@ -52,8 +52,9 @@
                         {{-- <td>
                             <a class="btn btn-primary"href="{{route('admin.courses.show', $course)}}">Revisar</a>
                         </td> --}}
-                        <td>{{$course->students_count}}
-                            <a href="{{route('admin.courses.user', $course)}}">Adultos Mayores</a></td>
+                        <td>{{$course->students_count}} Adultos mayores</td>
+
+                        <td><a href="{{route('admin.courses.user', $course)}}">Ver lista</a></td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -71,7 +72,8 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}">
-@stop
+
+    @stop
 
 @section('js')
     <script> console.log('Hi!'); </script>
