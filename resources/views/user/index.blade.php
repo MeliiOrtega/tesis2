@@ -30,6 +30,7 @@
                                 {{$course->students_count}}
                             </p>
                         </div>
+                       
                     <a href = "{{route('courses.show',$course)}}"class=" mt-4 btn btn-primary btn-block">
                         Ver contenido
                     </a>
