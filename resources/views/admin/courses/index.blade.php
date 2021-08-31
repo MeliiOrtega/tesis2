@@ -17,17 +17,20 @@
             <table class="table table-striped">
                 <thead>
                         <tr>
-                            <th>ID</th>
                             <th>Nombre</th>
                             <th>Categoría</th>
+                            <th>Voluntario</th>
+
                         </tr>
                 </thead>
                 <tbody>
                     @foreach ($courses as $course)
                     <tr>
-                        <td>{{$course->id}}</td>
+
                         <td>{{$course->title}}</td>
                         <td>{{$course->category->name}}</td>
+                        <td>{{$course->teacher->name}}</td>
+
                         <td>
                             <a class="btn btn-primary"href="{{route('admin.courses.show', $course)}}">Revisar</a>
                         </td>

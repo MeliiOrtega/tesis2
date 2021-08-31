@@ -7,6 +7,8 @@
 @stop
 
 @section('content')
+{{-- Header del dashboard TOTAl user, AM, voluntario, actividad --}}
+
     <div class="grid lg:grid-cols-4  grid-cols-2 gap-4">
         <div class="bg-indigo-600 py-2 rounded-lg">
             <div class="flex px-2 justify-around">
@@ -70,6 +72,10 @@
         <div>
            @livewire('admin.user-last')
         </div>
+
+        <div>
+            @livewire('admin.activity-pendiente')
+         </div>
     </div>
 @stop
 

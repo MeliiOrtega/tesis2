@@ -21,7 +21,7 @@ class CreateCoursesTable extends Migration
             $table->text('description');
             $table->enum('status', [Course::BORRADOR, Course::REVISION, Course::PUBLICADO])->default(Course::BORRADOR);
             $table->string('slug');
-            $table->string('week');
+           /*  $table->string('week'); */
             $table->time('hourStart');
             $table->time('hourEnd');
             $table->string('link');

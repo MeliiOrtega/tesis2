@@ -12,8 +12,8 @@
                 <tr>
                     {{-- <th>ID</th> --}}
                     <th>Nombre</th>
-                    <th>Email</th>
-                    <th>Role</th>
+                    <th>Correo electronico</th>
+                    <th>Rol</th>
                     <th></th>
                     <th></th>
                 <tr>

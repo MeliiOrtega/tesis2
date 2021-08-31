@@ -168,6 +168,9 @@ return [
         'password' => [
             'regex' => 'La contraseña debe tener un número, una letra mayúscula, una letra minúscula y un simbolo !,$,#,%',
         ],
+        'days' => [
+            'required' =>'Debe seleccionar al menos un día',
+        ],
     ],
 
     /*
