@@ -1,7 +1,7 @@
 <div class="grid grid-cols-2 gap-6">
 <div class="mb-4">
     {!! Form::label('title','Título de la actividad') !!}
-    {!! Form::text('title', null, ['class' => 'form-control rounded-md block w-full mt-1'. ($errors->has('title') ? ' border-red-500'  : '')]) !!}
+    {!! Form::text('title', null, ['class' => 'form-control rounded-md block w-full mt-1']) !!}
 
     @error('title')
     <strong class="text-xs text-red-600"> * {{$message}}</strong>
@@ -51,7 +51,7 @@
 @enderror
 </div> --}}
 <div class="mb-4">
-    {!! Form::label('link', 'Enlace de la reunion (ZOOM / MEET/ ETC') !!}
+    {!! Form::label('link', 'Enlace de la reunion (ZOOM / MEET/ ETC)') !!}
     {!! Form::text('link', null, ['class' => 'form-control rounded-md block w-full mt-1']) !!}
     @error('link')
     <strong class="text-xs text-red-600"> * {{$message}}</strong>
