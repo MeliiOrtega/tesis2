@@ -154,6 +154,10 @@ class CourseController extends Controller
         return view('voluntary.courses.goals', compact('course'));
     }
 
+    public function reviews(Course $course){
+        return view('voluntary.courses.reviews', compact('course'));
+    }
+
     public function status(Course $course){
         $course->status=2;
         $course->save();

@@ -22,3 +22,5 @@ Route::get('courses/{course}/students', CoursesStudents::class)->name('courses.s
 Route::post('courses/{course}/status', [CourseController::class, 'status'])->name('courses.status');
 
 Route::get('courses/{course}/observation', [CourseController::class, 'observation'])->name('courses.observation');
+
+Route::get('courses/{course}/reviews', [CourseController::class, 'reviews'])->name('courses.reviews');

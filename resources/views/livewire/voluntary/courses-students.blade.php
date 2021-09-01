@@ -18,9 +18,9 @@
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       email
                     </th>
-                    <th>
+                   {{--  <th>
                         Calificación
-                    </th>
+                    </th> --}}
                     <th>
 
                     </th>
@@ -54,7 +54,7 @@
 
                     </td>
 
-                    <td>
+                    {{-- <td>
                         @if ($student->reviews->count())
                         @foreach ($student->reviews as $review)
                         <div class="text-sm text-gray-900 flex items-center">{{$review->rating}}
@@ -67,15 +67,13 @@
                                             <li class="mr-1"><i class="fas fa-star text-{{$review->rating ==5 ? 'yellow' : 'gray'}}-400"></i></li>
                                         </ul>
                                         </div>
-
-                                      </td>
                                     @endforeach
 
                         @else
                         <p>No hay calificación</p>
 
                         @endif
-                    </td>
+                    </td> --}}
 
 
                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
@@ -88,23 +86,32 @@
                                 <!-- Modal -->
                                 <div x-show="showModal" class="bg-white rounded-xl shadow-2xl p-6 sm:w-10/12 mx-10" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
                                     <!-- Title -->
-                                    <span class="font-bold block text-3xl text-center">Datos personales</span>
+                                    <span class="font-bold block text-3xl text-center text-indigo-800">Datos personales</span>
 
-                                    <div class="text-2xl text-center mt-4 mb-2 ">Foto de perfil:</div>
+                                    <div class="text-2xl text-center mt-4 mb-2 text-indigo-700">Foto de perfil:</div>
                                     <center>
                                     <img class="" style="width:120px;height:120px;"  src="{{$student->profile_photo_url}}" alt="">
                                     </center>
-                                    <div class=" mt-2 mb-2  text-gray-900 text-left" >Nombre:</div>
-                                       <a class="border rounded-md"> {{$student->name}}
 
-                                    <div class=" mt-2 mb-2 text-gray-900 text-left">Correo:</div>
-                                        <a class="border rounded-md">{{$student->email}}
 
-                                    <div class=" mt-2 mb-2 text-gray-900 text-left">Numero de teléfono:</div>
-                                        <a class="border rounded-md">{{$student->phone}}
-
-                                    <div class=" mt-2 mb-2  text-gray-900 text-left">Fecha de Nacimiento:</div>
-                                        <a class="border rounded-md">{{$student->fecha}}
+                                    <div class="grid grid-cols-2 gap-2 mt-4">
+                                        <div class="flex">
+                                            <p class="font-bold text-3xl mr-2 text-indigo-700">Nombre</p>
+                                            <p class="font-semibold text-2xl text-center text-black border border-gray-400 w-full rounded-md">{{$student->name}}</p>
+                                        </div>
+                                        <div class="flex">
+                                            <p class="font-bold text-3xl mr-2 text-indigo-700">Email</p>
+                                            <p class="font-semibold text-2xl text-center text-black border border-gray-400 w-full rounded-md">{{$student->email}}</p>
+                                        </div>
+                                        <div class="flex">
+                                            <p class="font-bold text-3xl mr-2 text-indigo-700">Fecha de nacimiento</p>
+                                            <p class="font-semibold text-2xl text-center text-black border border-gray-400 w-full rounded-md">{{$student->fecha}}</p>
+                                        </div>
+                                        <div class="flex">
+                                            <p class="font-bold text-3xl mr-2 text-indigo-700">Celular</p>
+                                            <p class="font-semibold text-2xl text-center text-black border border-gray-400  w-full rounded-md">{{$student->phone}}</p>
+                                        </div>
+                                    </div>
 
 
                                     <!-- Buttons -->

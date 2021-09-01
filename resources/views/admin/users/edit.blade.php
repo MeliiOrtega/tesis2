@@ -89,6 +89,8 @@
             @include('admin.users.show')
         @else
 
+      {{--   @livewire('admin.list-course-user', ['user' => $user]) --}}
+
         <x-table-responsive>
             <h1 class="font-semibold text-3xl text-gray-700 my-2">Actividades registradas </h1>
             @if($user->courses_enrolled->count())
@@ -155,10 +157,8 @@
                        @break
                        @endif
 
-                       @if ($item->course_id !== $course->id)
-                       <p>No hay calificacón</p>
-                       @endif
-                      @break
+                      
+
                        @endforeach
                        @else
                         <p>No hay calificacón</p>
@@ -175,10 +175,10 @@
                   </tbody>
 
                 </table>
-               {{--  <div class="px-6 py-4">
-                  {{$user->courses_dictated->links()}}
-                  {{$user->courses_dictated->links('vendor.pagination.bootstrap-4')}}
-              </div> --}}
+                <div class="px-6 py-4">
+                  {{-- {{$user->courses_dictated->links()}}
+                  {{$user->courses_dictated->links('vendor.pagination.bootstrap-4')}} --}}
+              </div>
 
               @else
                 <div class="px-6 py-4 font-bold">
