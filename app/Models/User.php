@@ -71,6 +71,11 @@ class User extends Authenticatable implements  MustVerifyEmail
         'profile_photo_url',
     ];
 
+   /*  public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmail);
+    } */
+
     //Relacion uno a uno
     public function profile(){
         return $this->hasOne('App\Models\Profile');
