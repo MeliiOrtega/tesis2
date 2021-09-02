@@ -53,6 +53,7 @@ class CourseController extends Controller
           'days' => 'required',
            'hourStart' => 'required',
            'hourEnd' => 'required',
+           'link' => 'required'
        ]);
 
        $course = Course::create($request->all());
@@ -112,6 +113,7 @@ class CourseController extends Controller
             'days' => 'required',
             'hourStart' => 'required',
             'hourEnd' => 'required',
+            'link' => 'required'
         ]);
         $course->update($request->all());
 

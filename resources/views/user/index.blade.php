@@ -1,6 +1,7 @@
 <x-app-layout>
    {{--  @livewire('user.user-courses') --}}
 
+   <h1 class="font-bold text-indigo-800 text-4xl text-center my-4">Mis actividades</h1>
    <div class="my-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
         @foreach ($courses as $course)
@@ -30,7 +31,7 @@
                                 {{$course->students_count}}
                             </p>
                         </div>
-                       
+
                     <a href = "{{route('courses.show',$course)}}"class=" mt-4 btn btn-primary btn-block">
                         Ver contenido
                     </a>

@@ -5,14 +5,14 @@
                 <div class="  hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
                     <a href="{{route('home')}}" class="font-bold cursor-pointer text-xl text-white">
                         <i class="fas fa-arrow-left text-white"></i> Inicio</a>
-                    <img class="mt-8 rounded-lg" src="{{asset('/img/Home/home3.jpg')}}" alt="" width="100%" height="auto" >
+                    <img class="mt-8 rounded-lg" src="{{asset('/img/Home/registervoluntario.jpeg')}}" alt="" width="100%" height="auto" >
                 </div>
                 <div class="w-full md:w-1/2 py-10 px-5 md:px-10 bg-white">
                     <div class="text-center mb-10">
-                        <h1 class="font-bold text-3xl text-gray-900">Registro de usuario</h1>
+                        <h1 class="font-bold text-3xl text-gray-900">Registro de Voluntario</h1>
                         <p>Ingresa tu información</p>
                     </div>
-                   {{--  <x-jet-validation-errors class="mb-4" /> --}}
+
 
                         <form method="POST" action="{{ route('register') }}" >
                             @csrf
@@ -22,6 +22,9 @@
                                     <label  class="text-sm font-bold px-1">Email
                                     </label>
                                     <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="email" id="email" name="email" value="{{ old('email') }}" required autofocus/>
+                                    @error('email')
+                                    <span class="text-red-500"> * {{$message}}</span>
+                                    @enderror
 
                                 </div>
                             </div>
@@ -31,6 +34,9 @@
                                     <label  class="text-sm font-bold px-1">Nombre
                                     </label>
                                     <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"type="text" id="name"  name="name" value="{{ old('name') }}" required  autocomplete="name"/>
+                                    @error('name')
+                                    <span class="text-red-500"> * {{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
 
@@ -50,12 +56,18 @@
                                     <label class="text-sm font-bold px-1">Contraseña
                                     </label>
                                     <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="password" id="password" name="password" required autocomplete="new-password" />
+                                    @error('password')
+                                    <span class="text-red-500"> * {{$message}}</span>
+                                    @enderror
                                 </div>
 
                                 <div class="w-1/2 px-3 mb-5">
                                     <label class="text-sm font-bold px-1">Confirmar
                                     </label>
                                     <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="password" id="password_confirmation" name="password_confirmation" required autocomplete="new-password"/>
+                                    @error('password_confirmation')
+                                    <span class="text-red-500"> * {{$message}}</span>
+                                    @enderror
 
                                 </div>
                             </div>{{-- CONTRASEÑA --}}
@@ -86,10 +98,10 @@
                                 <div class="flex -mx-3">{{-- CONTRASEÑA --}}
 
 
-                                    <div  class="hidden">
+                                    <div  class="w-1/2 px-3 mb-5">
                                         <label class="text-sm font-bold px-1">Ocupación
                                         </label>
-                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="text" id="ocupacion" name="ocupacion"  value="no hay" required autocomplete="new-ocupacion" />
+                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="text" id="ocupacion" name="ocupacion"  value="{{ old('ocupacion') }}" required autocomplete="new-ocupacion" />
                                         @error('ocupacion')
                                         <span class="text-red-500"> * {{$message}}</span>
                                         @enderror
@@ -117,11 +129,11 @@
                                     </div>
                                 </div>
 
-                                <div class=" hidden">
+                                <div class="hidden">
                                     <div class="w-full px-3 mb-5">
                                         <label  class="text-sm font-bold px-1">Role
                                         </label>
-                                        <input class="w-full pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="tel" name="role" value="usuario" >
+                                        <input class="w-full pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="tel" name="role" value="voluntario" >
 
                                     </div>
                                 </div>

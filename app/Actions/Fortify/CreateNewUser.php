@@ -27,6 +27,9 @@ class CreateNewUser implements CreatesNewUsers
             'phone' =>['required', 'max:10', 'min:10'],
             'password' => ['required', 'confirmed',
             'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
+            'cedula' => 'required|regex:/^[0-9]{10}$/',
+            /* 'ocupacion' => 'required', */
+            'direccion' => 'required',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',
         ])->validate();
 
@@ -36,15 +39,18 @@ class CreateNewUser implements CreatesNewUsers
             'name' => $input['name'],
 
             'password' => Hash::make($input['password']),
-            'role' => 'usuario',
+            'role' =>  $input['role'],
             'phone' => $input['phone'],
-            'fecha' => $input['fecha']
+            'fecha' => $input['fecha'],
+            'cedula' => $input['cedula'],
+            'ocupacion' => $input['ocupacion'],
+            'direccion' => $input['direccion']
         ]);
 
-        $user->assignRole('usuario');
-        return $user;
+       /*  $user->assignRole('usuario');
+        return $user; */
 
-       /*  $role = $input['role'];
+        $role = $input['role'];
         if($role == 'voluntario'){
             $user->assignRole('voluntario');
             return $user;
@@ -52,7 +58,7 @@ class CreateNewUser implements CreatesNewUsers
         elseif($role == 'usuario'){
             $user->assignRole('usuario');
             return $user;
-        } */
+        }
 
 
 
