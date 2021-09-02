@@ -17,7 +17,16 @@
                 <p class="mb-2" > <i class="fas fa-sitemap"></i> Categoria: {{$course->category->name}}</p>
                 <p class="mb-2" > <i class="fas fa-users"></i> Registrados: {{$course->students_count}}</p>
                 <p class="mb-2" > <i class="fas fa-star"></i> Calificación: {{$course->rating}}</p>
-                <p class="mb-2"><i class="fas fa-calendar-week"></i> Dias: {{$course->week}}</p>
+                <p class="mb-2"><i class="fas fa-calendar-week"></i> Dias:
+
+                    @foreach ($course->days as $day)
+                    <div class="inline-flex ml-2 mb-2">
+                        <p>{{$day->name}}</p>
+                    </div>
+
+
+
+                @endforeach</p>
                 <p class="mb-2"><i class="fas fa-clock"></i> Hora: {{$course->hourStart}} - {{$course->hourEnd}}</p>
             </div>
         </div>
