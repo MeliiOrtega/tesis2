@@ -23,11 +23,11 @@ class CreateNewUser implements CreatesNewUsers
     {
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => 'email:rfc,dns',
-            'phone' =>['required', 'max:10', 'min:10','regex:/^[0-9]{10}$/'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' =>['required', 'max:10', 'min:10'],
             'password' => ['required', 'confirmed',
             'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
-            'cedula' => ['required', 'max:10', 'min:10','regex:/^[0-9]{10}$/'],
+            'cedula' => 'required|regex:/^[0-9]{10}$/',
             /* 'ocupacion' => 'required', */
             'direccion' => 'required',
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['required', 'accepted'] : '',

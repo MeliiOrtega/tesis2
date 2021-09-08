@@ -9,7 +9,6 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-use App\Notifications\ResetPassword;
 
 use Spatie\Permission\Traits\HasRoles;
 
@@ -63,10 +62,6 @@ class User extends Authenticatable implements  MustVerifyEmail
         'email_verified_at' => 'datetime',
     ];
 
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPassword($token));
-    }
     /**
      * The accessors to append to the model's array form.
      *

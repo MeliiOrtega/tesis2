@@ -15,7 +15,7 @@
 
         <article class="card" x-show="open"  x-on:click.away = "open = false">
             <div class="card-body bg-indigo-100">
-                <h1 class="text-xl font-bold mb-4">Agregar un nueva sección de contenido</h1>
+                <h1 class="text-xl font-bold mb-4">Agregar un nuevo video al contenido</h1>
                 <div class="mb-4">
                     <input wire:model="name" class="w-full rounded-md" type="text" placeholder="Escriba el nombre de la sección">
                     @error('name')

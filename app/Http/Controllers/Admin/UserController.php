@@ -29,14 +29,14 @@ class UserController extends Controller
     {
         $roles =Role::all();
         $reviews = Review::all();
-
+        
         return view('admin.users.edit', compact('user', 'roles', 'reviews') );
     }
 
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'email' => 'required|email:rfc,dns,filter|unique:users,email'.$user->id,
+            'email' => 'required|email|unique:users,email,'.$user->id,
             'name' => 'required',
             'phone' => 'required|regex:/^[0-9]{10}$/',
             'fecha' => 'required',

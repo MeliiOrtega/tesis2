@@ -160,12 +160,6 @@ return [
             'min' => 'El número de celular debe tener :min números',
 
         ],
-        'cedula' => [
-            'required' => 'El numero de cedula es requerido',
-            'max' => 'El número de cedula debe tener :max números',
-            'min' => 'El número de cedula debe tener :min números',
-
-        ],
 
         'password_confirmation' => [
             'required' => 'La confirmación de contraseña es requerida',
