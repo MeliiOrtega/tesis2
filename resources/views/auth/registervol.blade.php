@@ -4,7 +4,7 @@
             <div  class="md:flex w-full ">
                 <div class="  hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
                     <a href="{{route('home')}}" class="font-bold cursor-pointer text-xl text-white">
-                        <i class="fas fa-arrow-left text-white"></i> Inicio</a>
+                        <i class="fas fa-arrow-left text-white"></i> Atrás</a>
                     <img class="mt-8 rounded-lg" src="{{asset('/img/Home/registervoluntario.jpeg')}}" alt="" width="100%" height="auto" >
                 </div>
                 <div class="w-full md:w-1/2 py-10 px-5 md:px-10 bg-white">
@@ -79,7 +79,7 @@
                                     <div  class="w-1/2 px-3 mb-5">
                                         <label class="text-sm font-bold px-1">Fecha de nacimiento
                                         </label>
-                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="date" id="fecha" name="fecha"  value="{{ old('fecha') }}"required autocomplete="new-fecha" />
+                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="date" id="fecha" max="2003-12-31" name="fecha"  value="{{ old('fecha') }}"required autocomplete="new-fecha" />
                                         @error('fecha')
                                         <span class="text-red-500"> * {{$message}}</span>
                                         @enderror
@@ -101,7 +101,7 @@
                                     <div  class="w-1/2 px-3 mb-5">
                                         <label class="text-sm font-bold px-1">Ocupación
                                         </label>
-                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="text" id="ocupacion" name="ocupacion"  value="{{ old('ocupacion') }}" required autocomplete="new-ocupacion" />
+                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="text" id="ocupacion" name="ocupacion" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="{{ old('ocupacion') }}" required autocomplete="new-ocupacion" />
                                         @error('ocupacion')
                                         <span class="text-red-500"> * {{$message}}</span>
                                         @enderror
@@ -110,7 +110,7 @@
                                     <div class="w-1/2 px-3 mb-5">
                                         <label class="text-sm font-bold px-1">Celular
                                         </label>
-                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="tel" id="phone" name="phone"   value="{{ old('phone') }}" required autocomplete="phone"/>
+                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="tel" id="phone" minlength="10" maxlength="10" name="phone"   value="{{ old('phone') }}" required autocomplete="phone"/>
                                         @error('phone')
                                         <span class="text-red-500"> * {{$message}}</span>
                                         @enderror

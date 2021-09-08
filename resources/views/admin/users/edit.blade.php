@@ -42,7 +42,7 @@
 
                     <div>
                         {!! Form::label('fecha','Fecha de nacimiento') !!}
-                        {!! Form::date('fecha', null, ['class' => 'form-control rounded-md block w-full mt-1']) !!}
+                        {!! Form::date('fecha', null, ['class' => 'form-control rounded-md block w-full mt-1', 'max' => "2003-12-31"]) !!}
                         @error('fecha')
                         <span class="text-red-500"> *{{$message}}</span>
                         @enderror
@@ -50,7 +50,7 @@
 
                     <div>
                         {!! Form::label('phone','Celular') !!}
-                        {!! Form::number('phone', null, ['class' => 'form-control rounded-md block w-full mt-1']) !!}
+                        {!! Form::number('phone', null, ['class' => 'form-control rounded-md block w-full mt-1',  ]) !!}
                         @error('phone')
                         <span class="text-red-500"> *{{$message}}</span>
                         @enderror
@@ -157,7 +157,7 @@
                        @break
                        @endif
 
-                      
+
 
                        @endforeach
                        @else

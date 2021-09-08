@@ -58,7 +58,7 @@
                     <div>
                         <h1 class="font-bold text-3xl text-white text-center">¿Quieres ser Voluntario?</h1>
                         <p class="mt-6 mb-4 font-normal text-center text-white md:mt-0">
-                            Forma parte de la vida de un adulto mayor creando actividades, agregando contenido y realizando videollamada con ellos. Se parte de nuestro equipo de voluntarios. ¡Que esperas!
+                            Forma parte de la vida de un adulto mayor creando actividades, agregando contenido y realizando videollamada con ellos. Únete a nuestro equipo de voluntarios. ¡Que esperas!
                         </p>
                     </div>
 
