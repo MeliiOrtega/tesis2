@@ -21,8 +21,10 @@
                                 <div class="w-full px-3 mb-5">
                                     <label  class="text-sm font-bold px-1">Email
                                     </label>
-                                    <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="email" id="email" name="email" value="{{ old('email') }}" required autofocus/>
-
+                                    <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="email" id="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" name="email" value="{{ old('email') }}" required autofocus/>
+                                    @error('email')
+                                        <span class="text-red-500"> * {{$message}}</span>
+                                        @enderror
                                 </div>
                             </div>
 
@@ -31,6 +33,9 @@
                                     <label  class="text-sm font-bold px-1">Nombre
                                     </label>
                                     <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"type="text" id="name"  name="name" value="{{ old('name') }}" required  autocomplete="name"/>
+                                    @error('name')
+                                        <span class="text-red-500"> * {{$message}}</span>
+                                        @enderror
                                 </div>
                             </div>
 
@@ -50,13 +55,18 @@
                                     <label class="text-sm font-bold px-1">Contraseña
                                     </label>
                                     <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="password" id="password" name="password" required autocomplete="new-password" />
+                                    @error('password')
+                                        <span class="text-red-500"> * {{$message}}</span>
+                                        @enderror
                                 </div>
 
                                 <div class="w-1/2 px-3 mb-5">
                                     <label class="text-sm font-bold px-1">Confirmar
                                     </label>
                                     <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="password" id="password_confirmation" name="password_confirmation" required autocomplete="new-password"/>
-
+                                    @error('password_confirmation')
+                                        <span class="text-red-500"> * {{$message}}</span>
+                                        @enderror
                                 </div>
                             </div>{{-- CONTRASEÑA --}}
                                 <hr class="mb-2">
@@ -67,7 +77,7 @@
                                     <div  class="w-1/2 px-3 mb-5">
                                         <label class="text-sm font-bold px-1">Fecha de nacimiento
                                         </label>
-                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="date" id="fecha" name="fecha"  value="{{ old('fecha') }}"required autocomplete="new-fecha" />
+                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="date" id="fecha" name="fecha" max="2003-12-31" value="{{ old('fecha') }}"required autocomplete="new-fecha" />
                                         @error('fecha')
                                         <span class="text-red-500"> * {{$message}}</span>
                                         @enderror
@@ -76,7 +86,7 @@
                                     <div class="w-1/2 px-3 mb-5">
                                         <label class="text-sm font-bold px-1">Cedula
                                         </label>
-                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="number" id="cedula" name="cedula"  value="{{ old('cedula') }}" required autocomplete="cedula"/>
+                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="number" id="cedula" name="cedula" minlength="10" maxlength="10"  value="{{ old('cedula') }}" required autocomplete="cedula"/>
                                         @error('cedula')
                                 <span class="text-red-500"> * {{$message}}</span>
                                 @enderror
@@ -98,7 +108,7 @@
                                     <div class="w-1/2 px-3 mb-5">
                                         <label class="text-sm font-bold px-1">Celular
                                         </label>
-                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="tel" id="phone" name="phone"   value="{{ old('phone') }}" required autocomplete="phone"/>
+                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="tel" id="phone" name="phone" minlength="10" maxlength="10"  value="{{ old('phone') }}" required autocomplete="phone"/>
                                         @error('phone')
                                         <span class="text-red-500"> * {{$message}}</span>
                                         @enderror

@@ -48,7 +48,7 @@ class AppServiceProvider extends ServiceProvider
             ->action(Lang::get('Verificar correo'), $verificationUrl)
             ->line(Lang::get('Si no creó una cuenta, no es necesario realizar ninguna otra acción..'))
             ->salutation(new HtmlString(
-                Lang::get("Momment!.").'<br>' .'<strong>'. Lang::get("Proyecto") . '</strong>'));
+                Lang::get("Moment!.").'<br>' .'<strong>'. Lang::get("Un abrazo") . '</strong>'));
 
         };
 
@@ -64,18 +64,21 @@ class AppServiceProvider extends ServiceProvider
 
         };
 
-        ResetPassword::$toMailCallback = function($notifiable, $resetUrl){
+        /* ResetPassword::$toMailCallback = function($notifiable, $url){
             return (new MailMessage)
-            ->subject(Lang::get('Notificación para resetear contraseña'))
-            ->greeting(Lang::get("Hola ") . $notifiable->name)
-            ->line(Lang::get('Estás recibiendo este correo electrónico porque recibimos una solicitud de restablecimiento de contraseña para tu cuenta..'))
-            ->action(Lang::get('Resetear Contraseña'), $resetUrl)
-            ->line(Lang::get('Este enlace de restablecimiento de contraseña caducará en :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-            ->line(Lang::get('Si no solicitó un restablecimiento de contraseña, no es necesario realizar ninguna otra acción.'))
+            ->subject(Lang::get('Solicitud de restablecimiento de contraseña'))
+            ->line(Lang::get('Hola, se solicitó un restablecimiento de contraseña para tu cuenta ' . $notifiable->getEmailForPasswordReset() . ', haz clic en el botón que aparece a continuación para cambiar tu contraseña.'))
+            ->action(Lang::get('Cambiar contraseña'), $url = url(route('password.reset', [
+                'token' => $this->token,
+                'email' => $notifiable->getEmailForPasswordReset(),
+            ], false)))
+            ->line(Lang::get('Si tu no realizaste la solicitud de cambio de contraseña, solo ignora este mensaje. '))
+            ->line(Lang::get('Este enlace solo es válido dentro de los proximos :count minutos.', ['count' => config('auth.passwords.' . config('auth.defaults.passwords') . '.expire')]))
             ->salutation(new HtmlString(
                 Lang::get("Momment!.").'<br>' .'<strong>'. Lang::get("Proyecto") . '</strong>'));
 
-        };
+        }; */
+
 
         Blade::directive('routeIs', function ($expression) {
             return "<?php if(Request::url() == route($expression)): ?>";
