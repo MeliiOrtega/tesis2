@@ -36,9 +36,9 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $request->validate([
-            'email' => 'required|email:rfc,dns,filter|unique:users,email'.$user->id,
+            'email' => 'required|email|unique:users,email,'.$user->id,
             'name' => 'required',
-            'phone' => 'required|regex:/^[0-9]{10}$/',
+            'phone' => 'required|regex:/^[0-9]{10}$/|max:10|min:10',
             'fecha' => 'required',
             /* 'cedula' => 'required|regex:/^[0-9]{10}$/',
             'ocupacion' => 'required',

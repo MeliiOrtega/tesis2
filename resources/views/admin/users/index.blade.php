@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Momment')
+@section('title', 'Moment')
 
 @section('content_header')
     <h1>Lista de Usuarios</h1>
@@ -32,7 +32,7 @@
 
 @section('js')
 
-    {{-- <script src="{{ mix('js/app.js') }}" defer></script>
-    @livewireScripts --}}
+     <script src="{{ mix('js/app.js') }}" defer></script>
+{{-- @livewireScripts  --}}
 
 @stop

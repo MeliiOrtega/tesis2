@@ -158,12 +158,14 @@ return [
             'required' => 'El numero de celular es requerido',
             'max' => 'El número de celular debe tener :max números',
             'min' => 'El número de celular debe tener :min números',
+            'regex' => 'El número de celular debe tener 10 números'
 
         ],
         'cedula' => [
             'required' => 'El numero de cedula es requerido',
             'max' => 'El número de cedula debe tener :max números',
             'min' => 'El número de cedula debe tener :min números',
+            
 
         ],
 
