@@ -101,7 +101,7 @@
                 <section>
                     <h1 class="font-bold text-2xl mt-10 mb-10">Descripcion</h1>
 
-                    <div class="text-gray-700 text-base">
+                    <div class="text-gray-700 text-base mb-10">
                         {{$course->description}}
                     </div>
                 </section>

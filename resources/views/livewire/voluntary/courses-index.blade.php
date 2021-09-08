@@ -1,4 +1,9 @@
 <div class='container py-8'>
+    @if(session('info'))
+    <div class="py-3 px-5 mb-4 bg-green-100 text-green-900 text-sm rounded-md border border-green-200" role="alert">
+        {{session('info')}}
+    </div>
+    @endif
     <x-table-responsive>
         <div class="px-6 py-4 flex">
           <input wire:keydown="limpiar_page" wire:model="search" class="form-input flex-1 shadow-sm" placeholder="Ingrese el nombre de una Actividad">
@@ -24,6 +29,9 @@
                     <th scope="col" class="relative px-6 py-3">
                       <span class="sr-only">Edit</span>
                     </th>
+                    <th scope="col" class="relative py-3">
+                        <span class="sr-only">Eliminar</span>
+                      </th>
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
@@ -90,9 +98,16 @@
 
                     </td>
 
-                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <a href="{{route('voluntary.courses.edit', $course)}}" class="text-indigo-600 hover:text-indigo-900">Ver/Editar</a>
+                    <td class="pl-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                      <a href="{{route('voluntary.courses.edit', $course)}}" class="btn btn-blue">Ver/Editar</a>
                     </td>
+                    <td class="pr-4 py-4 whitespace-nowrap text-sm font-medium">
+                        <form action="{{route('voluntary.courses.destroy', $course)}}" method="POST">
+                            @csrf
+                            @method('delete')
+                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                        </form>
+                      </td>
                   </tr>
                   @endforeach
                   <!-- More people... -->

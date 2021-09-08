@@ -144,7 +144,9 @@ class CourseController extends Controller
      */
     public function destroy(Course $course)
     {
-        //
+        $course->delete();
+
+        return redirect()->route('voluntary.courses.index')->with('info', 'La actividad se ha eliminado');
     }
 
     public function observation(Course $course)
