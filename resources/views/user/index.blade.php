@@ -2,6 +2,7 @@
    {{--  @livewire('user.user-courses') --}}
 
    <h1 class="font-bold text-indigo-800 text-4xl text-center my-4">Mis actividades</h1>
+   @if ($courses->count())
    <div class="my-4">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2  md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
         @foreach ($courses as $course)
@@ -19,11 +20,11 @@
                     <!--Estrellas-->
                         <div class="flex">
                             <ul class="flex text-sm">
-                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating >=1 ? 'yellow' : 'gray'}}-400"></i></li>
-                                <li class="mr-1"><i class="fas fa-star  text-{{$course->rating >=2 ? 'yellow' : 'gray'}}-400"></i></li>
-                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating >=3 ? 'yellow' : 'gray'}}-400"></i></li>
-                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating >=4 ? 'yellow' : 'gray'}}-400"></i></li>
-                                <li class="mr-1"><i class="fas fa-star text-{{$course->rating ==5 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->avg_rating >=1 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star  text-{{$course->avg_rating >=2 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->avg_rating >=3 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->avg_rating >=4 ? 'yellow' : 'gray'}}-400"></i></li>
+                                <li class="mr-1"><i class="fas fa-star text-{{$course->avg_rating ==5 ? 'yellow' : 'gray'}}-400"></i></li>
                             </ul>
 
                             <p class="text-sm text-gray-500 ml-auto">
@@ -43,4 +44,15 @@
         {{$courses->links()}}
         </div>
    </div>
+   @else
+       
+       <section class="mt-2 text-gray-700 py-12">
+        <h1 class="text-center  text-3xl">No tienes actividades registradas <span class="text-indigo-600"> ¿Quieres ver todas las actividades?</span></h1>
+        <div class="flex justify-center mt-4">
+            <a href = "{{route('courses.index')}}"class="bg-indigo-600 text-2xl hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full">
+                Actividades
+              </a>
+        </div>
+    </section>
+   @endif
 </x-app-layout>

@@ -1,17 +1,10 @@
 <div>
-   {{--  <p>{{$user->name}}</p> --}}
-    {{-- @foreach ($user->courses_dictated as $course)
-
-
-    @endforeach --}}
-
-
-
+   
     <x-table-responsive>
           @if($user->courses_dictated->count())
-          <table class="min-w-full divide-y divide-gray-200">
+          <table class="min-w-full divide-y divide-gray-200" id="user">
                 <thead class="bg-gray-50">
-                  <tr></tr>
+                  <tr>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       Nombre
                     </th>
@@ -25,7 +18,7 @@
                       Estado
                     </th>
 
-                  </tr>
+                </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                 @foreach($user->courses_dictated as $course)
@@ -94,10 +87,7 @@
                 </tbody>
 
               </table>
-             {{--  <div class="px-6 py-4">
-                {{$user->courses_dictated->links()}}
-                {{$user->courses_dictated->links('vendor.pagination.bootstrap-4')}}
-            </div> --}}
+
 
             @else
               <div class="px-6 py-4 font-bold">

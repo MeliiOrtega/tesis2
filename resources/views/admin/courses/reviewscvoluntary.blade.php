@@ -3,11 +3,15 @@
 @section('title', 'Moment')
 
 @section('content_header')
-    <h1>Actividades Pendientes de aprobación</h1>
+    <h1>Reviews de la actividad: <span>{{$course->title}}</span></h1>
 @stop
 
 @section('css')
     {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
+     <!-- Styles -->
+     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+     {{--  <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
+         <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
@@ -21,27 +25,36 @@
     @endif
      <div class="card">
         <div class="card-body">
+            @if ($course->reviews->count())
             <table id="user" class="table table-striped">
                 <thead>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Categoría</th>
-                            <th>Voluntario</th>
-                            <th></th>
+                            <th>Adulto Mayor</th>
+                            <th>Calificación</th>
+                            <th>Comentario</th>
+                            
 
                         </tr>
                 </thead>
                 <tbody>
-                    @foreach ($courses as $course)
+                    @foreach ($course->reviews as $review)
                     <tr>
 
-                        <td>{{$course->title}}</td>
-                        <td>{{$course->category->name}}</td>
-                        <td>{{$course->teacher->name}}</td>
-
+                        <td>{{$review->user->name}}</td>
                         <td>
-                            <a class="btn btn-primary"href="{{route('admin.courses.show', $course)}}">Revisar</a>
-                        </td>
+                            <div class="flex">
+                                <span>{{$review->rating}} </span>
+                                <ul class="flex text-sm">
+                                    <li class="mr-1"><i class="fas fa-star text-{{$review->rating >=1 ? 'yellow' : 'gray'}}-400"></i></li>
+                                    <li class="mr-1"><i class="fas fa-star  text-{{$review->rating >=2 ? 'yellow' : 'gray'}}-400"></i></li>
+                                    <li class="mr-1"><i class="fas fa-star text-{{$review->rating >=3 ? 'yellow' : 'gray'}}-400"></i></li>
+                                    <li class="mr-1"><i class="fas fa-star text-{{$review->rating >=4 ? 'yellow' : 'gray'}}-400"></i></li>
+                                    <li class="mr-1"><i class="fas fa-star text-{{$review->rating ==5 ? 'yellow' : 'gray'}}-400"></i></li>
+                                </ul>
+
+                                
+                            </div></td>
+                        <td>{{$review->comment}}</td>
                         
                     </tr>
 
@@ -49,6 +62,9 @@
                 </tbody>
 
             </table>
+            @else
+                <p>No hay valoraciones</p>
+            @endif
         </div>
         
     </div>

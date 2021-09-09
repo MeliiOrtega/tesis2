@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Livewire\Admin\ReviewsCoursesVoluntary;
 use App\Http\Livewire\Admin\UserCourse;
 
 Route::get('', [HomeController::class, 'index'])->middleware('can:Ver dashboard')->name('home');
@@ -29,3 +30,7 @@ Route::get('courses/{course}/observation', [CourseController::class, 'observatio
 Route::post('courses/{course}/reject', [CourseController::class, 'reject'])->name('courses.reject');
 
 Route::get('courses/{course}/students',  [CourseController::class, 'CourseUser'])->name('courses.user');
+
+Route::get('admin/courses/{course}/reviews',  [CourseController::class, 'reviews'])->name('courses.reviewsvoluntary');
+
+

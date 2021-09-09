@@ -48,6 +48,10 @@ class CourseController extends Controller
         return view('admin.courses.user-course',compact('course'));
     }
 
+    public function reviews(Course $course){
+        return view('admin.courses.reviewscvoluntary',compact('course'));
+    }
+
     public function reject(Request $request, Course $course){
         $request->validate([
             'body' => 'required'

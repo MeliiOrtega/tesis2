@@ -247,7 +247,7 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Dashboard',
+            'text'        => 'Informe General',
             'route'         => 'admin.home',
             'icon'        => 'fas fa-fw fa-tachometer-alt',
             'can'           =>'Ver dashboard',

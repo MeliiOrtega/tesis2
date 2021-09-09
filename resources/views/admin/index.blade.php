@@ -76,6 +76,10 @@
         <div>
             @livewire('admin.activity-pendiente')
          </div>
+
+         <div>
+             @livewire('admin.activity-adult')
+         </div>
     </div>
 @stop
 

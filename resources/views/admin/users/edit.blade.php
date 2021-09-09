@@ -56,6 +56,18 @@
                         @enderror
                     </div>
 
+                    <div>
+                        {!! Form::label('created_at','Registrado') !!}
+                       
+                        {!! Form::datetime('created_at', null, ['readonly' => 'readonly','class' => 'form-control rounded-md block w-full mt-1',  ]) !!}
+                    </div>
+
+                    <div>
+                        {!! Form::label('created_at','Actualizado') !!}
+                       
+                        {!! Form::datetime('updated_at', null, ['readonly' => 'readonly','class' => 'form-control rounded-md block w-full mt-1',  ]) !!}
+                    </div>
+
                     @if ($user->role == 'voluntario')
                     <div class="">
                         {!! Form::label('cedula','Cedula') !!}
@@ -77,7 +89,7 @@
 
                 </div>
 
-                {!! Form::submit('Actualizar', ['class'=>'btn btn-blue mt-4'])!!}
+                {!! Form::submit('Actualizar', ['class'=>'btn btn-primary mt-4'])!!}
                 {!! Form::close()!!}
 
             </div>
@@ -94,7 +106,7 @@
         <x-table-responsive>
             <h1 class="font-semibold text-3xl text-gray-700 my-2">Actividades registradas </h1>
             @if($user->courses_enrolled->count())
-            <table class="min-w-full divide-y divide-gray-200">
+            <table class="min-w-full divide-y divide-gray-200" id="user">
                   <thead class="bg-gray-50">
                     <tr></tr>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -194,22 +206,36 @@
 @stop
 
 @section('css')
-{{--    <link rel="stylesheet" href="/css/admin_custom.css"> --}}
-
-    <!-- Styles -->
+    {{-- <link rel="stylesheet" href="/css/admin_custom.css"> --}}
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
     <link rel="stylesheet" href="{{asset('vendor/fontawesome-free/css/all.min.css')}}">
-    {{-- @livewireStyles --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.bootstrap4.min.css">
 
-    <!-- Scripts -->
-
-@stop
+    @stop
 
 @section('js')
-
-   {{--  <script src="{{ mix('js/app.js') }}" defer></script>
-    @livewireScripts --}}
-
-@stop
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+<script>
+     $('#user').DataTable({
+    "language": {
+        "lengthMenu": "Mostrar _MENU_ registros por pagina",
+        "zeroRecords": "Nada encontrado",
+        "info": "Mostrando la página  _PAGE_ de _PAGES_",
+        "infoEmpty": "No records available",
+        "infoFiltered": "(filtrado de _MAX_ registros totales)",
+        "search": "Buscar",
+        "paginate": {
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    }
+});
+</script>
+@stopp
 

@@ -29,5 +29,6 @@ class CourseReviews extends Component
             'rating' => $this->rating,
             'user_id' => auth()->user()->id
         ]);
+        return redirect()->route('courses.show',$course);
     }
 }
