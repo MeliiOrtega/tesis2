@@ -52,9 +52,9 @@ return [
     |
     */
 
-    /* 'url' => env('APP_URL'), */
+    'url' => env('APP_URL'),
 
-    'asset_url' => config('app.url'),
+    'asset_url' => env('ASSET_URL', null),
 
     /*
     |--------------------------------------------------------------------------
