@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'asset_url' => env('APP_URL', 'http://tesis2.test/public'),
+    'asset_url' => config('app.url'),
 
     /*
     |--------------------------------------------------------------------------
