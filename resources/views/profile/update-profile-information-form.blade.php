@@ -64,64 +64,71 @@
             <x-jet-input-error for="name" class="mt-2" />
         </div>
 
+
         <!-- Email -->
         <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
             <x-jet-label for="email" value="{{ __('Correo electronico') }}" />
-            <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
+            <x-jet-input id="email" type="email" class="mt-1 block w-full" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}"  wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
         </div>
 
+
+
         @if ($this->user->role != 'voluntario')
-        <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2"></div>
+
+        <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-4">
+            <x-jet-label for="direccion" value="{{ __('Dirección') }}" />
+                <x-jet-input id="direccion" type="tel" minlength="10" required maxlength="10" class="mt-1 block w-full" wire:model.defer="state.direccion" />
+                <x-jet-input-error for="direccion" class="mt-2" />
+            </div>
         <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2"></div>
         @endif
 
         <!-- Fecha de nacimiento -->
          <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
             <x-jet-label for="fecha" value="{{ __('Fecha de nacimiento') }}" />
-            <x-jet-input id="fecha" type="date" max="2003-12-31" class="mt-1 block w-full" wire:model.defer="state.fecha" />
+            <x-jet-input id="fecha" type="date" max="2003-12-31" class="mt-1 block w-full" max="2003-12-31" wire:model.defer="state.fecha" />
             <x-jet-input-error for="fecha" class="mt-2" />
         </div>
 
         @if ($this->user->role != 'voluntario')
         <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
             <x-jet-label for="phone" value="{{ __('Celular') }}" />
-                <x-jet-input id="phone" type="tel" minlength="10" maxlength="10"  class="mt-1 block w-full" wire:model.defer="state.phone" />
+                <x-jet-input id="phone" type="tel" minlength="10" maxlength="10" required class="mt-1 block w-full" wire:model.defer="state.phone" />
                 <x-jet-input-error for="phone" class="mt-2" />
             </div>
         @endif
+
          <!-- Celular -->
 
 
             @if ($this->user->role == 'voluntario')
-            <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-4">
-                <x-jet-label for="direccion" value="{{ __('Dirección') }}" />
-                    <x-jet-input id="direccion" type="tel" minlength="10" maxlength="10" class="mt-1 block w-full" wire:model.defer="state.direccion" />
-                    <x-jet-input-error for="direccion" class="mt-2" />
-                </div>
-
-                <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
-                    <x-jet-label for="phone" value="{{ __('Celular') }}" />
-                        <x-jet-input id="phone" type="tel" class="mt-1 block w-full" wire:model.defer="state.phone" />
-                        <x-jet-input-error for="phone" class="mt-2" />
+                <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-4">
+                    <x-jet-label for="direccion" value="{{ __('Dirección') }}" />
+                        <x-jet-input id="direccion" type="tel" minlength="10" required maxlength="10" class="mt-1 block w-full" wire:model.defer="state.direccion" />
+                        <x-jet-input-error for="direccion" class="mt-2" />
                     </div>
 
-            <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
-                <x-jet-label for="cedula" value="{{ __('Cedula') }}" />
-                    <x-jet-input id="cedula" type="number" class="mt-1 block w-full" wire:model.defer="state.cedula" />
-                    <x-jet-input-error for="cedula" class="mt-2" />
-                </div>
-
+                    <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
+                        <x-jet-label for="phone" value="{{ __('Celular') }}" />
+                            <x-jet-input id="phone" type="tel" class="mt-1 block w-full" required wire:model.defer="state.phone" />
+                            <x-jet-input-error for="phone" class="mt-2" />
+                        </div>
 
                 <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
-                    <x-jet-label for="ocupacion" value="{{ __('Ocupación') }}" />
-                        <x-jet-input id="ocupacion" type="text" class="mt-1 block w-full" wire:model.defer="state.ocupacion" />
-                        <x-jet-input-error for="ocupacion" class="mt-2" />
+                    <x-jet-label for="cedula" value="{{ __('Cedula') }}" />
+                        <x-jet-input id="cedula" type="number" class="mt-1 block w-full" required wire:model.defer="state.cedula" />
+                        <x-jet-input-error for="cedula" class="mt-2" />
                     </div>
 
 
-
+                    <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
+                        <x-jet-label for="ocupacion" value="{{ __('Ocupación') }}" />
+                            <x-jet-input id="ocupacion" type="text" class="mt-1 block w-full" required wire:model.defer="state.ocupacion" />
+                            <x-jet-input-error for="ocupacion" class="mt-2" />
+                        </div>
             @endif
+
 
 
 

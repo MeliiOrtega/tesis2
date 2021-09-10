@@ -21,7 +21,7 @@
                                 <div class="w-full px-3 mb-5">
                                     <label  class="text-sm font-bold px-1">Email
                                     </label>
-                                    <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="email" id="email" name="email" value="{{ old('email') }}" required autofocus/>
+                                    <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="email" id="email" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" name="email" value="{{ old('email') }}" required autofocus/>
                                     @error('email')
                                     <span class="text-red-500"> * {{$message}}</span>
                                     @enderror
@@ -101,10 +101,10 @@
                                     <div  class="w-1/2 px-3 mb-5">
                                         <label class="text-sm font-bold px-1">Ocupación
                                         </label>
-                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="text" id="ocupacion" name="ocupacion" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" value="{{ old('ocupacion') }}" required autocomplete="new-ocupacion" />
-                                        @error('ocupacion')
+                                        <input  class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500" type="text" id="ocupacion" name="ocupacion" required value="{{ old('ocupacion') }}" required autocomplete="new-ocupacion" />
+                                        {{-- @error('ocupacion')
                                         <span class="text-red-500"> * {{$message}}</span>
-                                        @enderror
+                                        @enderror --}}
                                     </div>
 
                                     <div class="w-1/2 px-3 mb-5">

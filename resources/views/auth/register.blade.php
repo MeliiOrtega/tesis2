@@ -5,7 +5,7 @@
                 <div class="  hidden md:block w-1/2 bg-indigo-500 py-10 px-10">
                     <a href="{{route('home')}}" class="font-bold cursor-pointer text-xl text-white">
                         <i class="fas fa-arrow-left text-white"></i> Inicio</a>
-                    <img class="mt-8 rounded-lg" src="{{asset('/img/Home/home3.jpg')}}" alt="" width="100%" height="auto" >
+                    <img class="mt-8 rounded-lg" src="{{asset('/img/Home/Home3.jpg')}}" alt="" width="100%" height="auto" >
                 </div>
                 <div class="w-full md:w-1/2 py-10 px-5 md:px-10 bg-white">
                     <div class="text-center mb-10">
@@ -84,13 +84,17 @@
                                     </div>
 
                                     <div class="w-1/2 px-3 mb-5">
-                                        <label class="text-sm font-bold px-1">Cedula
+                                        <label class="text-sm font-bold px-1">Celular
                                         </label>
-                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="number" id="cedula" name="cedula" minlength="10" maxlength="10"  value="{{ old('cedula') }}" required autocomplete="cedula"/>
-                                        @error('cedula')
-                                <span class="text-red-500"> * {{$message}}</span>
-                                @enderror
+                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="tel" id="phone" name="phone" minlength="10" maxlength="10"  value="{{ old('phone') }}" required autocomplete="phone"/>
+                                        @error('phone')
+                                        <span class="text-red-500"> * {{$message}}</span>
+                                        @enderror
                                     </div>
+
+
+
+
                                 </div>{{-- FECHA CELULAR--}}
 
                                 <div class="flex -mx-3">{{-- CONTRASEÑA --}}
@@ -105,14 +109,16 @@
                                         @enderror
                                     </div>
 
-                                    <div class="w-1/2 px-3 mb-5">
-                                        <label class="text-sm font-bold px-1">Celular
+                                    <div class="w-1/2 px-3 mb-5 hidden">
+                                        <label class="text-sm font-bold px-1">Cedula
                                         </label>
-                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="tel" id="phone" name="phone" minlength="10" maxlength="10"  value="{{ old('phone') }}" required autocomplete="phone"/>
-                                        @error('phone')
-                                        <span class="text-red-500"> * {{$message}}</span>
-                                        @enderror
+                                        <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="number" id="cedula" name="cedula" minlength="10" maxlength="10"  value="0950570820" required autocomplete="cedula"/>
+                                        @error('cedula')
+                                <span class="text-red-500"> * {{$message}}</span>
+                                @enderror
                                     </div>
+
+
                                 </div>{{-- CONTRASEÑA --}}
 
                                 <div class="flex -mx-3">
