@@ -10,8 +10,8 @@
             <div class="lg:w-1/2 p-5 bg-white md:flex-1">
                 <x-jet-validation-errors class="mb-4" />
 
-                <a href="{{route('home')}}" class="font-bold cursor-pointer text-xl text-indigo-600">
-                    <i class="fas fa-arrow-left text-indigo-600"></i> Inicio</a>
+                {{-- <a href="{{route('home')}}" class="font-bold cursor-pointer text-xl text-indigo-600">
+                    <i class="fas fa-arrow-left text-indigo-600"></i> Inicio</a> --}}
                 <h3 class="my-4 text-2xl font-bold text-gray-700">Iniciar Sesión</h3>
                 <form class="flex flex-col space-y-5" method="POST" action="{{ route('login') }}">
                 @csrf
