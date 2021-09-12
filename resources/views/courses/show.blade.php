@@ -163,7 +163,9 @@
                     <a class="btn btn-danger btn-block mt-4" href="{{route('courses.status', $course)}}">Ver contenido</a>
                     <a class="btn btn-danger btn-block mt-4 mb-4" href="{{$course->link}}">Videollamada</a>
                     @else
-                    <a class="btn btn-danger btn-block mt-4" href="{{route('courses.status', $course)}}">Ver contenido</a>
+
+                    
+                    <a class="btn btn-danger btn-block mt-4 mb-4" href="{{$course->link}}">Videollamada</a>
                     @endif
 
 
