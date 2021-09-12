@@ -17,7 +17,7 @@ class CourseController extends Controller
     }
 
     public function aprobado(){
-        $courses= Course::where('status', 3)->orderBy('avg_rating','desc')->paginate(5);
+        $courses= Course::where('status', 3)->orderBy('avg_rating','desc')->paginate();
         return view('admin.courses.approved', compact('courses'));
     }
 
