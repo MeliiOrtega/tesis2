@@ -15,7 +15,7 @@ class UserCourseController extends Controller
         ->where('user_id', auth()->user()->id)
         ->latest('id')
         ->paginate(8); */
-        $courses = User::find(auth()->user()->id)->courses_enrolled()->paginate(6);
+        $courses = User::find(auth()->user()->id)->courses_enrolled()->paginate(12);
         /* $roles = App\User::find(1)->roles()->orderBy('name')->get(); */
         /* return $categories; */
         return view('user.index', compact('courses'));

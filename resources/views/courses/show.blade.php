@@ -97,24 +97,24 @@
                              <!-- Button -->
                             <h1 class="font-bold text-gray-500 text-lg cursor-pointer" @click="showModal = !showModal">Voluntario: {{$course->teacher->name}}</h1>
                             <a  class="text-blue-400 text-sm font-bold cursor-pointer" @click="showModal = !showModal">{{'@' . Str::slug($course->teacher->name, '')}}</a>
-                        
-                            
-                               
-                                
-    
+
+
+
+
+
                                 <!-- Modal Background -->
                                 <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" aria-hidden="true">
                                     <!-- Modal -->
                                     <div x-show="showModal" class="bg-white rounded-xl shadow-2xl p-6 sm:w-10/12 mx-10" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
                                         <!-- Title -->
                                         <span class="font-bold block text-3xl text-center text-indigo-800">Datos personales del voluntario</span>
-    
+
                                         <div class="text-2xl text-center mt-4 mb-2 text-indigo-700">Foto de perfil:</div>
                                         <center>
                                         <img class="" style="width:120px;height:120px;"  src="{{$course->teacher->profile_photo_url}}" alt="">
                                         </center>
-    
-    
+
+
                                         <div class="grid grid-cols-2 gap-2 mt-4">
                                             <div class="flex">
                                                 <p class="font-bold text-3xl mr-2 text-indigo-700">Nombre</p>
@@ -133,20 +133,20 @@
                                                 <p class="font-semibold text-2xl text-center text-black border border-gray-400  w-full rounded-md">{{$course->teacher->phone}}</p>
                                             </div>
                                         </div>
-    
-    
+
+
                                         <!-- Buttons -->
                                         <div class="text-right space-x-5 mt-5">
                                             <button @click="showModal = !showModal" class="px-4 py-2 text-sm bg-white rounded-xl border  btn btn-blue">Cerrar</button>
-    
+
                                         </div>
                                     </div>
                                 </div>
-                            
-                        
+
+
                         </div>
 
-                        
+
 
 
 
@@ -159,7 +159,13 @@
 
                    @role('usuario')
                     @can('enrolled', $course)
-                        <a class="btn btn-danger btn-block mt-4" href="{{route('courses.status', $course)}}">Ver contenido</a>
+                    @if ($course->sections->count())
+                    <a class="btn btn-danger btn-block mt-4" href="{{route('courses.status', $course)}}">Ver contenido</a>
+                    <a class="btn btn-danger btn-block mt-4 mb-4" href="{{$course->link}}">Videollamada</a>
+                    @else
+                    <a class="btn btn-danger btn-block mt-4" href="{{route('courses.status', $course)}}">Ver contenido</a>
+                    @endif
+
 
 
                    @else
