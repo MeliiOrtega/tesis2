@@ -40,6 +40,16 @@
                         @enderror
                     </div>
 
+                    @if ($user->role != 'voluntario')
+                    <div>
+                        {!! Form::label('fecha','Fecha de nacimiento') !!}
+                        {!! Form::date('fecha', null, ['class' => 'form-control rounded-md block w-full mt-1', 'max' => "1956-12-31"]) !!}
+                        @error('fecha')
+                        <span class="text-red-500"> *{{$message}}</span>
+                        @enderror
+                    </div>
+                    @else
+
                     <div>
                         {!! Form::label('fecha','Fecha de nacimiento') !!}
                         {!! Form::date('fecha', null, ['class' => 'form-control rounded-md block w-full mt-1', 'max' => "2003-12-31"]) !!}
@@ -47,6 +57,9 @@
                         <span class="text-red-500"> *{{$message}}</span>
                         @enderror
                     </div>
+
+                    @endif
+
 
                     <div>
                         {!! Form::label('phone','Celular') !!}
@@ -58,13 +71,13 @@
 
                     <div>
                         {!! Form::label('created_at','Registrado') !!}
-                       
+
                         {!! Form::datetime('created_at', null, ['readonly' => 'readonly','class' => 'form-control rounded-md block w-full mt-1',  ]) !!}
                     </div>
 
                     <div>
                         {!! Form::label('created_at','Actualizado') !!}
-                       
+
                         {!! Form::datetime('updated_at', null, ['readonly' => 'readonly','class' => 'form-control rounded-md block w-full mt-1',  ]) !!}
                     </div>
 

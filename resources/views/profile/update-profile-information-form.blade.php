@@ -82,14 +82,21 @@
                 <x-jet-input-error for="direccion" class="mt-2" />
             </div>
         <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2"></div>
+
+        <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
+            <x-jet-label for="fecha" value="{{ __('Fecha de nacimiento') }}" />
+            <x-jet-input id="fecha" type="date" max="2003-12-31" class="mt-1 block w-full" max="1956-12-31" wire:model.defer="state.fecha" />
+            <x-jet-input-error for="fecha" class="mt-2" />
+        </div>
         @endif
 
         <!-- Fecha de nacimiento -->
-         <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
+        <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
             <x-jet-label for="fecha" value="{{ __('Fecha de nacimiento') }}" />
             <x-jet-input id="fecha" type="date" max="2003-12-31" class="mt-1 block w-full" max="2003-12-31" wire:model.defer="state.fecha" />
             <x-jet-input-error for="fecha" class="mt-2" />
         </div>
+
 
         @if ($this->user->role != 'voluntario')
         <div class="{{-- col-span-6 sm:col-span-4 --}} col-span-2">
