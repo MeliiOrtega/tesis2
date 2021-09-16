@@ -9,6 +9,10 @@
                     <p class ="font-bold text-lg mt-4 mb-4">Encontraras actividades dirigidas especialmente para ti, <br> porque tú eres importante para nosotros</p>
                     @livewire('search')
 
+                    <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v12.0" nonce="mqBNFtza"></script>
+
+<div class="fb-like" data-href="https://www.facebook.com/Moment-105703308531019" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
                 </div>
             </div>
     </section>
