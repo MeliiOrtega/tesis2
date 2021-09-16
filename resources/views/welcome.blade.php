@@ -8,13 +8,22 @@
                     </h1>
                     <p class ="font-bold text-lg mt-4 mb-4">Encontraras actividades dirigidas especialmente para ti, <br> porque tú eres importante para nosotros</p>
                     @livewire('search')
-
-                    <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v12.0" nonce="mqBNFtza"></script>
-
-<div class="fb-like" data-href="https://www.facebook.com/Moment-105703308531019" data-width="" data-layout="standard" data-action="like" data-size="large" data-share="true"></div>
                 </div>
-            </div>
+
+                <div id="fb-root"></div>
+                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v12.0" nonce="9S4fRATX"></script>
+                <div class="fb-page my-4"
+                data-href="https://www.facebook.com/Moment-105703308531019"
+                data-width="500"
+                data-hide-cover="false"
+                data-height="500"
+                data-show-facepile="true"></div>
+                <br>
+                <div class="fb-like" data-href="https://www.facebook.com/Moment-105703308531019" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+
+
+          </div>
+
     </section>
 <!-- CONTENIDO DE LAS ACTIVIDADES-->
     <section class="mt-24 justify-center">
