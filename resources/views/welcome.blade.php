@@ -14,14 +14,14 @@
 
     </section>
 
-    
 
-    <section class=" bg-red-500 py-10">
+
+    <section class=" bg-purple-500 py-10">
         <h1 class="text-center text-white text-3xl">Únete a nuestra página de Facebook</h1>
         <div class="flex justify-center mt-4">
-            
+
             <div class="">
-                
+
             </div>
             {{-- <div class="fb-page my-4"
             data-href="https://www.facebook.com/Moment-105703308531019" data-width="500" data-hide-cover="false" data-height="500" data-show-facepile="true" data-small-header="true"></div>
@@ -91,7 +91,7 @@
         </div>
     </section>
 
-    
+
 </x-app-layout>
 
 
