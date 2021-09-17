@@ -21,6 +21,9 @@
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />
+        <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v12.0" nonce="9S4fRATX"></script>
+            
 
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-menu')

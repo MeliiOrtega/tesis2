@@ -1,6 +1,6 @@
 <x-app-layout>
     <!-- Portada -->
-    <section class ="bg-cover bg-no-repeat bg-center w-auto y-auto h-screen" style="background-image: url({{asset('img/Home/Home2.jpg')}})">
+    <section class ="bg-cover bg-no-repeat bg-center w-auto y-auto" style="background-image: url({{asset('img/Home/Home2.jpg')}})">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-36">
                 <div class="w-full md:w-3/4 lg:w-1/2">
                     <h1 class="text-indigo-800 font-bold text-4xl">
@@ -10,21 +10,28 @@
                     @livewire('search')
                 </div>
 
-                <div id="fb-root"></div>
-                <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v12.0" nonce="9S4fRATX"></script>
-                <div class="fb-page my-4"
-                data-href="https://www.facebook.com/Moment-105703308531019"
-                data-width="500"
-                data-hide-cover="false"
-                data-height="500"
-                data-show-facepile="true"></div>
-                <br>
-                <div class="fb-like" data-href="https://www.facebook.com/Moment-105703308531019" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
-
-
           </div>
 
     </section>
+
+    
+
+    <section class=" bg-red-500 py-10">
+        <h1 class="text-center text-white text-3xl">Únete a nuestra página de Facebook</h1>
+        <div class="flex justify-center mt-4">
+            
+            <div class="">
+                
+            </div>
+            {{-- <div class="fb-page my-4"
+            data-href="https://www.facebook.com/Moment-105703308531019" data-width="500" data-hide-cover="false" data-height="500" data-show-facepile="true" data-small-header="true"></div>
+            <br> --}}
+            <div class="fb-like text-3xl" data-href="https://www.facebook.com/Moment-105703308531019" data-width="" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div>
+        </div>
+    </section>
+
+
+
 <!-- CONTENIDO DE LAS ACTIVIDADES-->
     <section class="mt-24 justify-center">
         <h1 class="text-gray-600 text-center text-3xl mb-6">Categoria de Actividades</h1>
@@ -83,6 +90,8 @@
 
         </div>
     </section>
+
+    
 </x-app-layout>
 
 
