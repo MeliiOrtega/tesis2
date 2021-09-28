@@ -14,7 +14,7 @@
                     </div>
 
 
-                        <form method="POST" action="{{ route('register') }}" >
+                        <form method="POST" id="formulario" action="{{ route('register') }}" >
                             @csrf
 
                             <div class="flex -mx-3">
@@ -91,7 +91,57 @@
                                         <input class="w-full  pl-10 pr-3 py-2 rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"  type="number" id="cedula" name="cedula"  value="{{ old('cedula') }}" required autocomplete="cedula"/>
                                         @error('cedula')
                                 <span class="text-red-500"> * {{$message}}</span>
+                                <div id="salida"></div>
                                 @enderror
+
+                                <script type="text/javascript">
+
+                                    document.addEventListener("DOMContentLoaded", function(){
+                                        document.getElementById("formulario").addEventListener('submit', validarFormulario);
+                                    });
+
+                                    function validarFormulario(evento) {
+                                        evento.preventDefault();
+                                        var cedula = document.getElementById('cedula').value;
+
+                                        var resp = verificarCedula(cedula);
+                                        var mensaje;
+
+                                        if(resp == false) {
+
+                                            /* document.getElementById("salida").innerHTML = ("Cedula invalida"); */
+
+                                         alert('Cedula invalida');
+                                         return;
+                                        }
+
+
+                                       /* else{
+                                            alert('Todo OK');
+                                            return;
+                                        }*/
+                                        this.submit();
+                                    }
+
+                                    function verificarCedula(cedula) {
+                                        if (typeof(cedula) == 'string' && cedula.length == 10 && /^\d+$/.test(cedula)) {
+                                            var digitos = cedula.split('').map(Number);
+                                            var codigo_provincia = digitos[0] * 10 + digitos[1];
+
+                                            if (codigo_provincia >= 1 && (codigo_provincia <= 24 || codigo_provincia == 30)) {
+                                              var digito_verificador = digitos.pop();
+
+                                              var digito_calculado = digitos.reduce(
+                                                function (valorPrevio, valorActual, indice) {
+                                                  return valorPrevio - (valorActual * (2 - indice % 2)) % 9 - (valorActual == 9) * 9;
+                                                }, 1000) % 10;
+                                              return digito_calculado === digito_verificador;
+                                            }
+                                        }
+                                        return false;
+                                    }
+                                </script>
+
                                     </div>
                                 </div>{{-- FECHA CELULAR--}}
 
